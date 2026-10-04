@@ -90,3 +90,7 @@ The task also searches the web for new awards, keynotes and media coverage and a
 Nothing is published automatically: the task lists what changed and waits for approval. After review, `tools/publish.sh "message"` commits and pushes to GitHub, which republishes the site.
 Google Scholar has to be read from your own computer (it blocks cloud servers), so the task runs on this Mac while the Claude app is open; if the Mac is asleep at 7:05 on Monday it runs at the next launch.
 The home page reads `data/metrics.json` on every visit, so the numbers shown are always the latest pulled.
+
+## After changing CSS or JavaScript
+
+Run `python3 tools/bump_assets.py` before committing. It stamps the stylesheet/script links in every page with a new `?v=` version, so visitors never get a fresh page paired with a cached old stylesheet (GitHub Pages caches files for 10 minutes).

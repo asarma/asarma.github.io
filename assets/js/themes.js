@@ -6,7 +6,7 @@ window.THEMES = [
     short: 'How developers come to trust, adopt, and delegate to generative AI, and the AI systems they actually want built.',
     color: '#6d28d9',
     tag: 'Human–AI Collaboration',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="3"/><path d="M10 11h.01M14 11h.01M10 14h4"/></svg>',
+    icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3"/><rect x="7" y="7" width="10" height="10" rx="3"/><path d="M10 11h.01M14 11h.01M10 14h4"/></svg>',
     body: 'AI assistants are now teammates in software work. We study what drives developers to trust and adopt them, where developers draw the line on AI autonomy, how AI changes team dynamics and burnout, and which AI systems developers actually want built. Much of this work is done in partnership with Microsoft Research.',
     questions: [
       'What drives developers’ trust in and adoption of GenAI tools?',
@@ -21,7 +21,7 @@ window.THEMES = [
     short: 'What habitual AI use does to how students think, and how to design AI support that builds skill instead of replacing it.',
     color: '#4338ca',
     tag: 'Learning & CS Education',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3a3.5 3.5 0 0 0-3.4 4.3A3.5 3.5 0 0 0 5 14a3.5 3.5 0 0 0 4.5 4.8V3z"/><path d="M14.5 3a3.5 3.5 0 0 1 3.4 4.3A3.5 3.5 0 0 1 19 14a3.5 3.5 0 0 1-4.5 4.8V3z"/></svg>',
+    icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 3a3.5 3.5 0 0 0-3.4 4.3A3.5 3.5 0 0 0 5 14a3.5 3.5 0 0 0 4.5 4.8V3z"/><path d="M14.5 3a3.5 3.5 0 0 1 3.4 4.3A3.5 3.5 0 0 1 19 14a3.5 3.5 0 0 1-4.5 4.8V3z"/></svg>',
     body: 'Our studies of STEM students show that habitual reliance on GenAI is associated with sharp declines in reflection and critical thinking, a “cognitive debt” that compounds over time. We study how students actually learn with AI tutors and chatbots, and we build conversational agents that scaffold computational thinking rather than short-circuit it.',
     questions: [
       'How does GenAI reliance change students’ cognitive habits?',
@@ -36,7 +36,7 @@ window.THEMES = [
     short: 'Methods and tools that find and fix the “inclusivity bugs” that make software harder for some people to use.',
     color: '#c026d3',
     tag: 'Inclusive Design & GenderMag',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>',
+    icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>',
     body: 'As co-director of the GenderMag project, I work on systematic methods (GenderMag, InclusiveMag, SocioeconomicMag) and automated tools that detect cognitive-style inclusivity bugs in software, courseware, and national-scale digital infrastructure such as MOSIP.',
     questions: [
       'How do tools embed bias against particular cognitive styles?',
@@ -51,7 +51,7 @@ window.THEMES = [
     short: 'Mentoring, belonging, burnout, and what AI-generated contributions mean for maintainers.',
     color: '#15803d',
     tag: 'Open Source Communities',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 11 16M16 7.5 13 16M8.5 6h7"/></svg>',
+    icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="2.5"/><circle cx="18" cy="6" r="2.5"/><circle cx="12" cy="18" r="2.5"/><path d="M8 7.5 11 16M16 7.5 13 16M8.5 6h7"/></svg>',
     body: 'Open source runs on volunteers whose time and attention are finite. With the Apache Software Foundation, the Linux Foundation, and others, we study implicit mentoring, newcomer onboarding, belonging, burnout, and turnover, and we build dashboards that help community managers act on what we find.',
     questions: [
       'What makes contributors feel they belong, and what drives them away?',
@@ -66,7 +66,7 @@ window.THEMES = [
     short: 'The foundations: awareness, merge conflicts, cognitive biases, and how developers manage context.',
     color: '#1d4ed8',
     tag: 'Coordination & Collaboration',
-    icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12M18 9v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 15a9 9 0 0 0 9-9"/></svg>',
+    icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3v12M18 9v12"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="6" r="3"/><path d="M6 15a9 9 0 0 0 9-9"/></svg>',
     body: 'Technical dependencies between pieces of code create social dependencies between developers. Starting with Palantír, my early work on workspace awareness, we have studied how to predict and prevent merge conflicts, how cognitive biases shape development work, and how developers create and recover context.',
     questions: [
       'How can awareness tools head off conflicts before they happen?',

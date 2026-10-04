@@ -133,16 +133,16 @@
       const rank = o => (FIRST.indexOf(o) + 1) || 99;
       const outlets = [...new Set(press.map(n => SHORT[n.outlet.split(/ — | \(/)[0]] || shortName(n.outlet)))].sort((a, b) => rank(a) - rank(b));
       items.push({ c: '#a21caf', href: 'news.html#media', t: 'In the news', s: outlets.slice(0, 3).join(' · '),
-        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8M12 18v3"/></svg>' });
+        icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8M12 18v3"/></svg>' });
     }
 
     const keynotes = news.filter(n => n.type === 'Keynote' && !n.draft && n.outlet);
     if (keynotes.length) items.push({ c: '#4c1d95', href: 'news.html#talks', t: `${keynotes.length} keynotes`,
       s: [...new Set(keynotes.map(n => shortName(n.outlet)))].slice(0, 2).join(' · '),
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>' });
+      icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>' });
 
     items.push({ c: '#7e22ce', href: 'https://gendermag.org', ext: true, t: 'GenderMag', s: 'Co-Director',
-      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>' });
+      icon: '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>' });
 
     el.innerHTML = items.slice(0, 4).map((it, i) => `
       <a class="float-label p${i + 1}" style="--c:${it.c}" href="${url(it.href)}"${it.ext ? ' target="_blank" rel="noopener"' : ''}>
