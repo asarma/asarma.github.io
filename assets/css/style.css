@@ -246,21 +246,11 @@ section { margin: 0 0 88px; }
 .portrait { position: relative; justify-self: center; width: min(400px, 100%); }
 .portrait-frame { padding: 12px; border-radius: 36px; transform: rotate(1.5deg); }
 .portrait-frame img { height: auto; border-radius: 26px; aspect-ratio: 4 / 4.4; object-fit: cover; object-position: 50% 20%; width: 100%; }
-.float-card { position: absolute; display: flex; align-items: center; gap: 10px; padding: 11px 15px; border-radius: 18px; font-size: 13.5px; line-height: 1.25; animation: bob 7s ease-in-out infinite; text-decoration: none; }
-.float-card b { display: block; font-size: 15px; }
-.float-card .ic { width: 34px; height: 34px; border-radius: 11px; display: grid; place-items: center; color: #fff; flex: none; }
-.float-card.f1 { left: -38px; bottom: 64px; }
-.float-card.f2 { right: -26px; top: 34px; animation-delay: -3.5s; }
-@keyframes bob { 50% { transform: translateY(-8px); } }
 @media (max-width: 900px) {
   .hero { grid-template-columns: 1fr; gap: 36px; padding-top: 20px; }
   .portrait { order: -1; width: min(260px, 68%); }
   .portrait-frame { padding: 8px; border-radius: 28px; }
   .portrait-frame img { aspect-ratio: 1 / 1; border-radius: 22px; }
-  .float-card { padding: 8px 12px; font-size: 12px; }
-  .float-card b { font-size: 13px; }
-  .float-card .ic { width: 28px; height: 28px; border-radius: 9px; }
-  .float-card.f1 { left: -34px; bottom: 18px; } .float-card.f2 { right: -44px; top: 14px; }
   .hero h1 { margin: 12px 0 14px; }
 }
 
