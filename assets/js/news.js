@@ -3,8 +3,8 @@
   const $ = id => document.getElementById(id);
 
   const KIND_COLOR = {
-    Press: '#be185d', TV: '#c2410c', Radio: '#b45309', Podcast: '#9333ea', Newsletter: '#7c3aed',
-    Keynote: '#8b1d6b', Talk: '#4338ca', Panel: '#6d28d9', Award: '#a16207', Paper: '#4d7c0f', Service: '#475569',
+    Press: '#c026d3', TV: '#7e22ce', Radio: '#6d28d9', Podcast: '#9333ea', Newsletter: '#4338ca',
+    Keynote: '#5b21b6', Talk: '#1d4ed8', Panel: '#4c1d95', Award: '#a16207', Paper: '#15803d', Service: '#475569',
   };
   const GROUPS = [
     ['all', 'All', null],

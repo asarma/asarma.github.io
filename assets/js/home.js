@@ -76,23 +76,23 @@
 
     const awards = pubs.filter(p => p.award && /best|distinguished/i.test(p.award) && !/nomin|honou?rable/i.test(p.award))
       .sort((a, b) => b.year - a.year);
-    if (awards.length) items.push({ c: '#d4a017', href: 'publications.html?award=1', icon: ICONS.trophy,
+    if (awards.length) items.push({ c: '#6d28d9', href: 'publications.html?award=1', icon: ICONS.trophy,
       t: `${awards.length} Best & Distinguished Paper Awards`,
       s: awards.slice(0, 4).map(p => `${p.venueShort || shortName(p.venue)} ${yy(p.year)}`).join(' · ') });
 
     const press = news.filter(n => ['Press', 'TV', 'Radio'].includes(n.type) && n.outlet);
     if (press.length) {
       const outlets = [...new Set(press.map(n => SHORT[n.outlet.split(/ — | \(/)[0]] || shortName(n.outlet)))];
-      items.push({ c: '#8b1d6b', href: 'news.html#media', t: 'In the news & on TV', s: outlets.slice(0, 5).join(' · '),
+      items.push({ c: '#a21caf', href: 'news.html#media', t: 'In the news & on TV', s: outlets.slice(0, 5).join(' · '),
         icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8M12 18v3"/></svg>' });
     }
 
     const keynotes = news.filter(n => n.type === 'Keynote' && !n.draft && n.outlet);
-    if (keynotes.length) items.push({ c: '#be185d', href: 'news.html#talks', t: `${keynotes.length} keynotes`,
+    if (keynotes.length) items.push({ c: '#4c1d95', href: 'news.html#talks', t: `${keynotes.length} keynotes`,
       s: keynotes.slice(0, 4).map(n => `${shortName(n.outlet)} ${yy(n.date.slice(0, 4))}`).join(' · '),
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>' });
 
-    items.push({ c: '#b45309', href: 'https://gendermag.org', ext: true, t: 'Co-Director, GenderMag', s: 'Inclusive software design',
+    items.push({ c: '#7e22ce', href: 'https://gendermag.org', ext: true, t: 'Co-Director, GenderMag', s: 'Inclusive software design',
       icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>' });
 
     el.innerHTML = items.slice(0, 4).map((it, i) => `

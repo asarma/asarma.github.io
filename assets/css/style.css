@@ -22,30 +22,30 @@
    ========================================================================== */
 
 :root {
-  --bg: #faf6f4;
-  --bg-2: #f4eeeb;
-  --ink: #1e1720;
-  --ink-2: #3a2e3c;
-  --muted: #54485a;
-  --faint: #605466;
-  --accent: #8b1d6b;
-  --accent-2: #be185d;
-  --accent-3: #b45309;
+  --bg: #f7f6fa;
+  --bg-2: #efedf5;
+  --ink: #191624;
+  --ink-2: #34303f;
+  --muted: #4f4a5c;
+  --faint: #5c5768;
+  --accent: #5b21b6;
+  --accent-2: #7e22ce;
+  --accent-3: #a21caf;
   --accent-ink: #ffffff;
-  --gold: #8a5a00;
+  --gold: #6b5a00;
 
   --glass: rgba(255, 255, 255, 0.62);
   --glass-strong: rgba(255, 255, 255, 0.78);
   --glass-soft: rgba(255, 255, 255, 0.38);
   --glass-border: rgba(255, 255, 255, 0.75);
-  --hairline: rgba(30, 23, 32, 0.08);
-  --shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 12px 40px -12px rgba(70, 24, 60, 0.14);
-  --shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 30px 80px -30px rgba(70, 24, 60, 0.28);
+  --hairline: rgba(25, 22, 36, 0.08);
+  --shadow: 0 1px 0 rgba(255, 255, 255, 0.6) inset, 0 12px 40px -12px rgba(46, 24, 90, 0.14);
+  --shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 30px 80px -30px rgba(46, 24, 90, 0.28);
 
-  --blob-1: #f8cfdf;
-  --blob-2: #e6d2f2;
-  --blob-3: #ffdcc0;
-  --blob-4: #f3ead9;
+  --blob-1: #ddd6fe;
+  --blob-2: #f1d6f6;
+  --blob-3: #e4e1f1;
+  --blob-4: #e9e3fa;
 
   --radius: 22px;
   --radius-sm: 14px;
@@ -58,54 +58,54 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #0d0a10;
-    --bg-2: #140f18;
-    --ink: #f4eef5;
-    --ink-2: #ddd2df;
-    --muted: #b6a8b9;
-    --faint: #8f8293;
-    --accent: #eaa5d2;
-    --accent-2: #f7a1bb;
-    --accent-3: #f4b27c;
-    --accent-ink: #1a0b16;
+    --bg: #0c0a14;
+    --bg-2: #12101c;
+    --ink: #f2f0f8;
+    --ink-2: #d9d4e6;
+    --muted: #aca6bd;
+    --faint: #8a849b;
+    --accent: #c4b5fd;
+    --accent-2: #d8b4fe;
+    --accent-3: #f0abfc;
+    --accent-ink: #140b24;
     --gold: #f6c561;
-    --glass: rgba(33, 26, 38, 0.6);
-    --glass-strong: rgba(38, 29, 44, 0.82);
-    --glass-soft: rgba(33, 26, 38, 0.38);
+    --glass: rgba(27, 24, 40, 0.6);
+    --glass-strong: rgba(32, 28, 48, 0.82);
+    --glass-soft: rgba(27, 24, 40, 0.38);
     --glass-border: rgba(255, 255, 255, 0.09);
     --hairline: rgba(255, 255, 255, 0.08);
     --shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 12px 40px -12px rgba(0, 0, 0, 0.6);
     --shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 30px 80px -30px rgba(0, 0, 0, 0.8);
-    --blob-1: #4a1d45;
-    --blob-2: #2e1a3d;
-    --blob-3: #3b2418;
-    --blob-4: #241a24;
+    --blob-1: #3b1a5c;
+    --blob-2: #3a1a48;
+    --blob-3: #22203a;
+    --blob-4: #1e1830;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0d0a10;
-  --bg-2: #140f18;
-  --ink: #f4eef5;
-  --ink-2: #ddd2df;
-  --muted: #b6a8b9;
-  --faint: #8f8293;
-  --accent: #eaa5d2;
-  --accent-2: #f7a1bb;
-  --accent-3: #f4b27c;
-  --accent-ink: #1a0b16;
+  --bg: #0c0a14;
+  --bg-2: #12101c;
+  --ink: #f2f0f8;
+  --ink-2: #d9d4e6;
+  --muted: #aca6bd;
+  --faint: #8a849b;
+  --accent: #c4b5fd;
+  --accent-2: #d8b4fe;
+  --accent-3: #f0abfc;
+  --accent-ink: #140b24;
   --gold: #f6c561;
-  --glass: rgba(33, 26, 38, 0.6);
-  --glass-strong: rgba(38, 29, 44, 0.82);
-  --glass-soft: rgba(33, 26, 38, 0.38);
+  --glass: rgba(27, 24, 40, 0.6);
+  --glass-strong: rgba(32, 28, 48, 0.82);
+  --glass-soft: rgba(27, 24, 40, 0.38);
   --glass-border: rgba(255, 255, 255, 0.09);
   --hairline: rgba(255, 255, 255, 0.08);
   --shadow: 0 1px 0 rgba(255, 255, 255, 0.05) inset, 0 12px 40px -12px rgba(0, 0, 0, 0.6);
   --shadow-lg: 0 1px 0 rgba(255, 255, 255, 0.06) inset, 0 30px 80px -30px rgba(0, 0, 0, 0.8);
-  --blob-1: #4a1d45;
-  --blob-2: #2e1a3d;
-  --blob-3: #3b2418;
-  --blob-4: #241a24;
+  --blob-1: #3b1a5c;
+  --blob-2: #3a1a48;
+  --blob-3: #22203a;
+  --blob-4: #1e1830;
   color-scheme: dark;
 }
 
@@ -194,7 +194,7 @@ section { margin: 0 0 88px; }
 .nav { position: fixed; top: 14px; left: 0; right: 0; z-index: 50; }
 .nav-inner { display: flex; align-items: center; gap: 8px; padding: 8px 8px 8px 18px; border-radius: 999px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 650; letter-spacing: -0.01em; white-space: nowrap; margin-right: auto; }
-.brand-mark { width: 32px; height: 32px; flex: none; display: block; filter: drop-shadow(0 4px 10px rgba(139, 29, 107, 0.35)); }
+.brand-mark { width: 32px; height: 32px; flex: none; display: block; filter: drop-shadow(0 4px 10px rgba(91, 33, 182, 0.35)); }
 .nav-links { display: flex; align-items: center; gap: 2px; list-style: none; margin: 0; padding: 0; }
 .nav-links a { display: block; padding: 8px 13px; border-radius: 999px; text-decoration: none; font-size: 14.5px; font-weight: 500; color: var(--ink-2); transition: background .2s, color .2s; white-space: nowrap; }
 .nav-links a:hover { background: var(--glass-soft); color: var(--ink); }

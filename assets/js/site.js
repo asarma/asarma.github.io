@@ -27,18 +27,18 @@
 
   // Research-field palette (shared by publications, research, home)
   const FIELDS = {
-    'Human–AI Collaboration': '#8b1d6b',
-    'Developer Productivity & Trust': '#7c3aed',
-    'Learning & CS Education': '#b45309',
-    'Inclusive Design & GenderMag': '#be185d',
-    'Open Source Communities': '#4d7c0f',
-    'Mentoring & Onboarding': '#a16207',
-    'Developer Well-being & Belonging': '#e11d48',
-    'Coordination & Collaboration': '#4338ca',
-    'Developer Cognition & Tools': '#9333ea',
-    'End-User Programming': '#c2410c',
-    'Software Analytics & Visualization': '#1d4ed8',
-    'Privacy & Security': '#475569',
+    'Human–AI Collaboration': '#6d28d9',
+    'Developer Productivity & Trust': '#9333ea',
+    'Learning & CS Education': '#4338ca',
+    'Inclusive Design & GenderMag': '#c026d3',
+    'Open Source Communities': '#15803d',
+    'Mentoring & Onboarding': '#4d7c0f',
+    'Developer Well-being & Belonging': '#db2777',
+    'Coordination & Collaboration': '#1d4ed8',
+    'Developer Cognition & Tools': '#7e22ce',
+    'End-User Programming': '#a16207',
+    'Software Analytics & Visualization': '#475569',
+    'Privacy & Security': '#334155',
   };
 
   // Paste the full LinkedIn profile URL here to show LinkedIn links across the site.
@@ -60,7 +60,7 @@
     el.innerHTML = `
       <div class="wrap">
         <div class="nav-inner glass glass-strong">
-          <a class="brand" href="index.html" aria-label="Anita Sarma — home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7a1a5e"/><stop offset="1" stop-color="#c0265f"/></linearGradient></defs><circle cx="32" cy="32" r="31" fill="url(#bm-g)"/><circle cx="32" cy="32" r="25" fill="none" stroke="#fff" stroke-opacity=".92" stroke-width="2.4"/><circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1"/><text x="32" y="43.5" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="33" fill="#fff">A</text></svg><span>Anita Sarma</span></a>
+          <a class="brand" href="index.html" aria-label="Anita Sarma — home"><svg class="brand-mark" viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="bm-g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#4c1d95"/><stop offset="1" stop-color="#a21caf"/></linearGradient></defs><circle cx="32" cy="32" r="31" fill="url(#bm-g)"/><circle cx="32" cy="32" r="25" fill="none" stroke="#fff" stroke-opacity=".92" stroke-width="2.4"/><circle cx="32" cy="32" r="20.5" fill="none" stroke="#fff" stroke-opacity=".35" stroke-width="1"/><text x="32" y="43.5" text-anchor="middle" font-family="Instrument Serif, Georgia, serif" font-size="33" fill="#fff">A</text></svg><span>Anita Sarma</span></a>
           <ul class="nav-links" id="nav-links">${links}</ul>
           <button class="icon-btn" id="theme-btn" type="button" aria-label="Toggle dark mode"></button>
           <button class="icon-btn menu-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">${ICONS.menu}</button>
