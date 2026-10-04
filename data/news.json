@@ -75,12 +75,11 @@
  },
  {
   "date": "2026-05-05",
-  "type": "TV",
-  "title": "AI’s impact on students’ cognitive engagement",
-  "outlet": "KGW TV News (Portland)",
-  "url": "https://www.youtube.com/watch?v=3m1ZyJx4sic&t=16m",
-  "summary": "KGW covers “Thinking Less, Trusting More” with Rudrajit Choudhuri. Also picked up by Straight Arrow News and The News Guard.",
-  "featured": true
+  "type": "Press",
+  "title": "America’s STEM students are falling into an “AI dependence spiral”",
+  "outlet": "Straight Arrow News (SAN)",
+  "url": "https://san.com/cc/americas-stem-students-are-falling-into-an-ai-dependence-spiral/",
+  "summary": "On our “Thinking Less, Trusting More” study; I compare AI reliance to how we once offloaded thinking to calculators and GPS."
  },
  {
   "date": "2026-05-04",
@@ -97,6 +96,23 @@
   "outlet": "KOIN 6 News",
   "url": "https://www.koin.com/news/oregon/osu-study-warns-of-declining-cognitive-ability-as-ai-use-grows-in-stem-fields/",
   "summary": "Coverage of our findings on how GenAI changes how students think, learn, and judge their own understanding."
+ },
+ {
+  "date": "2026-05-03",
+  "type": "Press",
+  "title": "Tech-savvy STEM students prone to letting AI do their thinking for them",
+  "outlet": "The News Guard",
+  "url": "https://www.thenewsguard.com/news/tech-savvy-stem-students-prone-to-letting-ai-do-their-thinking-for-them-osu-study/article_901edad0-1e2f-4f1e-aa41-8ae7a1fdff3a.html",
+  "summary": "Coverage of the Oregon State study on AI dependence among STEM students, led by my PhD student Rudrajit Choudhuri."
+ },
+ {
+  "date": "2026-05-01",
+  "type": "TV",
+  "title": "AI might be reshaping how college students learn, at the expense of critical thinking",
+  "outlet": "KGW TV News (Portland)",
+  "url": "https://www.instagram.com/reel/DXxGQS1isbu/",
+  "summary": "KGW covers “Thinking Less, Trusting More,” our study of how habitual GenAI use affects students’ thinking, with Rudrajit Choudhuri.",
+  "featured": true
  },
  {
   "date": "2026-04-15",
@@ -149,6 +165,14 @@
   "type": "Award",
   "title": "OSU College of Engineering Mentoring Award",
   "outlet": "Oregon State University"
+ },
+ {
+  "date": "2025-03-18",
+  "type": "Newsletter",
+  "title": "What influences developers’ trust in adopting AI-assisted coding tools?",
+  "outlet": "Research-Driven Engineering Leadership (RDEL #84)",
+  "url": "https://rdel.substack.com/p/rdel-84-what-influences-developers",
+  "summary": "Feature on our ICSE 2025 paper “What Guides Our Choices? Modeling Developers’ Trust and Behavioral Intentions Towards GenAI.”"
  },
  {
   "date": "2025-02-01",

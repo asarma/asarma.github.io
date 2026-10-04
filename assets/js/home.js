@@ -30,6 +30,8 @@
 
   try {
     const [news, pubs] = await Promise.all([getJSON('data/news.json'), getJSON('data/publications.json')]);
+    renderHighlights(news, pubs);
+    renderPressTicker(news);
     document.getElementById('stat-pubs').textContent = Math.floor(pubs.filter(p => p.type !== 'Tech Report').length / 10) * 10 + '+';
 
     const latest = news.filter(n => !n.draft).slice(0, 6);
@@ -57,4 +59,66 @@
     document.getElementById('latest').innerHTML = '<div style="padding:22px" class="muted">News could not be loaded. If you opened this file directly, run it from a local web server.</div>';
   }
   setupReveal();
+
+  // ---- Cumulative highlights around the portrait (computed from the data, so they never go stale) ----
+  function renderHighlights(news, pubs) {
+    const el = document.getElementById('float-labels');
+    if (!el) return;
+    const yy = y => `’${String(y).slice(-2)}`;
+    const shortName = o => {
+      const paren = (o.match(/\(([A-Z][A-Za-z&/-]{1,10})\)/) || [])[1];
+      let n = paren || o.split(/ — |,|\(/)[0];
+      n = n.replace(/\s*\b(19|20)\d\d\b/, '').trim();
+      return n.length > 14 ? n.split(' ')[0] : n;
+    };
+    const SHORT = { 'The New York Times': 'NYT', 'Jefferson Public Radio': 'JPR', 'KGW TV News': 'KGW', 'KATU News': 'KATU', 'KOIN 6 News': 'KOIN 6' };
+    const items = [];
+
+    const awards = pubs.filter(p => p.award && /best|distinguished/i.test(p.award) && !/nomin|honou?rable/i.test(p.award))
+      .sort((a, b) => b.year - a.year);
+    if (awards.length) items.push({ c: '#d4a017', href: 'publications.html?award=1', icon: ICONS.trophy,
+      t: `${awards.length} Best & Distinguished Paper Awards`,
+      s: awards.slice(0, 4).map(p => `${p.venueShort || shortName(p.venue)} ${yy(p.year)}`).join(' · ') });
+
+    const press = news.filter(n => ['Press', 'TV', 'Radio'].includes(n.type) && n.outlet);
+    if (press.length) {
+      const outlets = [...new Set(press.map(n => SHORT[n.outlet.split(/ — | \(/)[0]] || shortName(n.outlet)))];
+      items.push({ c: '#4338ca', href: 'news.html#media', t: 'In the news & on TV', s: outlets.slice(0, 5).join(' · '),
+        icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M8 21h8M12 18v3"/></svg>' });
+    }
+
+    const keynotes = news.filter(n => n.type === 'Keynote' && !n.draft && n.outlet);
+    if (keynotes.length) items.push({ c: '#7c3aed', href: 'news.html#talks', t: `${keynotes.length} keynotes`,
+      s: keynotes.slice(0, 4).map(n => `${shortName(n.outlet)} ${yy(n.date.slice(0, 4))}`).join(' · '),
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg>' });
+
+    items.push({ c: '#c2410c', href: 'https://gendermag.org', ext: true, t: 'Co-Director, GenderMag', s: 'Inclusive software design',
+      icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3"/><circle cx="17" cy="10" r="2.5"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M14 20c0-2.2 1.3-4 3-4s3 1.8 3 4"/></svg>' });
+
+    el.innerHTML = items.slice(0, 4).map((it, i) => `
+      <a class="float-label p${i + 1}" style="--c:${it.c}" href="${url(it.href)}"${it.ext ? ' target="_blank" rel="noopener"' : ''}>
+        <span class="ic">${it.icon}</span>
+        <span><b>${esc(it.t)}</b><small>${esc(it.s)}</small></span>
+      </a>`).join('');
+  }
+
+  // ---- "Featured in" ticker: every media outlet in the news data, scrolling slowly ----
+  function renderPressTicker(news) {
+    const box = document.getElementById('press-marquee');
+    if (!box) return;
+    const clean = o => o.replace(/\s*\((?:RDEL )?#?\d+\)$/, '').split(/ — |, Episode|,| \(Portland\)/)[0].replace(/ TV News$| News$/, '').trim();
+    const outlets = [...new Set(news.filter(n => ['Press', 'TV', 'Radio', 'Podcast', 'Newsletter'].includes(n.type) && n.outlet)
+      .map(n => clean(n.outlet)))];
+    if (outlets.length < 4) return;   // keep the static list
+    const links = outlets.map(o => `<a class="outlet" href="news.html#media">${esc(o)}</a>`).join('');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      box.innerHTML = `<div class="marquee-track">${links}</div>`;   // static, wrapped list
+      return;
+    }
+    // Two copies side by side make the loop seamless; the copy is hidden from screen readers and the tab order.
+    const copy = links.replace(/<a /g, '<a tabindex="-1" ');
+    box.innerHTML = `<div class="marquee-track">${links}<span aria-hidden="true" style="display:contents">${copy}</span></div>`;
+    box.style.setProperty('--ticker-dur', `${Math.max(30, outlets.length * 5)}s`);
+    box.classList.add('is-running');
+  }
 })();
