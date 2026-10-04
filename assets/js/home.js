@@ -60,11 +60,22 @@
     document.getElementById('latest').innerHTML = '<div style="padding:22px" class="muted">News could not be loaded. If you opened this file directly, run it from a local web server.</div>';
   }
   // Copy the bio as plain text (for organizers and press)
-  document.getElementById('copy-bio')?.addEventListener('click', async () => {
+  async function copyBio(e) {
+    e?.preventDefault();
     const text = [...document.querySelectorAll('#bio-text p')].map(p => p.textContent.trim()).join('\n\n');
-    try { await navigator.clipboard.writeText(text); window.Site.toast('Bio copied'); }
-    catch (e) { window.Site.toast('Select the text to copy it'); }
-  });
+    const show = () => document.getElementById('bio').scrollIntoView({ behavior: 'smooth', block: 'center' });
+    try { await navigator.clipboard.writeText(text); window.Site.toast('Bio copied to clipboard'); show(); return; } catch (err) {}
+    // Fallback for browsers without clipboard permission
+    const ta = Object.assign(document.createElement('textarea'), { value: text });
+    ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select();
+    let ok = false; try { ok = document.execCommand('copy'); } catch (err) {}
+    ta.remove();
+    if (ok) { window.Site.toast('Bio copied to clipboard'); show(); return; }
+    show();
+    window.Site.toast('Select the bio text to copy it');
+  }
+  document.getElementById('copy-bio')?.addEventListener('click', copyBio);
+  document.getElementById('bio-pill')?.addEventListener('click', copyBio);
 
   setupReveal();
 
