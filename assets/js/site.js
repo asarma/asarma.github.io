@@ -41,6 +41,9 @@
     'Privacy & Security': '#64748b',
   };
 
+  // Paste the full LinkedIn profile URL here to show LinkedIn links across the site.
+  const LINKEDIN = 'https://www.linkedin.com/in/anita-sarma/';
+
   const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
   function renderNav() {
@@ -98,6 +101,7 @@
             <a href="https://scholar.google.com/citations?user=shMjCasAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
             <a href="https://dblp.org/pid/26/6565.html" target="_blank" rel="noopener">DBLP</a>
             <a href="https://epiclab.github.io/" target="_blank" rel="noopener">EPIC Lab</a>
+            <a href="#" target="_blank" rel="noopener" data-linkedin hidden>LinkedIn</a>
             <a href="https://gendermag.org" target="_blank" rel="noopener">GenderMag</a>
             <a href="mailto:anita.sarma@oregonstate.edu">Email</a>
           </nav>
@@ -138,7 +142,16 @@
 
   window.Site = { ICONS, FIELDS, esc, fmtDate, getJSON, boldMe, toast, setupReveal };
 
+  function wireLinkedIn() {
+    if (!LINKEDIN) return;
+    document.querySelectorAll('[data-linkedin]').forEach(el => {
+      el.hidden = false;
+      (el.tagName === 'A' ? el : el.querySelector('a')).href = LINKEDIN;
+    });
+  }
+
   renderNav();
   renderFooter();
+  wireLinkedIn();
   setupReveal();
 })();
