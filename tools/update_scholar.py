@@ -197,6 +197,7 @@ def main():
         ignore = {norm(r['title']) for r in rows if not listed(norm(r['title']))}
         IGNORE.write_text(json.dumps(sorted(ignore), indent=0))
 
+    best_cites = {}
     next_id = 1 + max([int(p['id'][2:]) for p in pubs if p['id'].startswith('S.')] or [0])
     for r in rows:
         n = norm(r['title'])
@@ -204,9 +205,8 @@ def main():
             continue
         p = by_norm.get(n) or next((v for k, v in by_norm.items() if len(n) > 30 and len(k) > 30 and (n in k or k in n)), None)
         if p:
-            if r['cites'] and r['cites'] != p.get('cites'):
-                p['cites'] = r['cites']
-                report['cites_updated'] += 1
+            # A paper can appear twice on Scholar (preprint + published); keep the higher count.
+            best_cites[p['id']] = max(best_cites.get(p['id'], 0), r['cites'] or 0)
             # A preprint we list has now appeared at a venue: upgrade it in place.
             if p['type'] == 'Preprint' and r['venue'] and not re.search(r'arxiv', r['venue'], re.I):
                 kind, short, _ = classify(r['title'], r['venue'])
@@ -248,6 +248,12 @@ def main():
                      'title': f'New {"preprint" if kind == "Preprint" else "paper"}: “{r["title"]}”',
                      'outlet': entry['venueShort'] or entry['venue'],
                      'url': entry.get('doi') or (f'https://arxiv.org/abs/{entry["arxiv"]}' if arx else r['scholar'])})
+
+    for p in pubs:
+        c = best_cites.get(p['id'])
+        if c and c != p.get('cites'):
+            p['cites'] = c
+            report['cites_updated'] += 1
 
     order = {'Journal': 0, 'Conference': 1, 'Book Chapter': 2, 'Workshop': 3, 'Preprint': 4, 'Tech Report': 5}
     pubs.sort(key=lambda d: (-(d.get('year') or 0), order.get(d['type'], 9)))
