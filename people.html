@@ -47,7 +47,7 @@
 <script src="assets/js/site.js"></script>
 <script>
 (function () {
-  const { esc, setupReveal } = window.Site;
+  const { esc, url, setupReveal } = window.Site;
   const C = ['#6d5efc', '#0ea5e9', '#e2557b', '#10b981', '#f59e0b', '#3b82f6', '#a855f7', '#14b8a6'];
   const ini = n => n.split(/\s+/).map(w => w[0]).slice(0, 2).join('');
   // Whole card links out when we have a page for the person
@@ -55,7 +55,7 @@
     const inner = `<span class="avatar">${esc(ini(p[0]))}</span>
       <div><h3>${esc(p[0])}${p[2] ? '<span class="ext-mark" aria-hidden="true"> ↗</span>' : ''}</h3><p>${esc(p[1])}</p></div>`;
     return p[2]
-      ? `<a class="person glass lift reveal" style="--c:${C[i % C.length]}" href="${p[2]}" target="_blank" rel="noopener" aria-label="${esc(p[0])}: open profile">${inner}</a>`
+      ? `<a class="person glass lift reveal" style="--c:${C[i % C.length]}" href="${url(p[2])}" target="_blank" rel="noopener" aria-label="${esc(p[0])}: open profile">${inner}</a>`
       : `<div class="person glass reveal" style="--c:${C[i % C.length]}">${inner}</div>`;
   };
 

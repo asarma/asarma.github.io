@@ -1,5 +1,5 @@
 (async function () {
-  const { esc, getJSON, boldMe, ICONS, FIELDS, toast } = window.Site;
+  const { esc, url, getJSON, boldMe, ICONS, FIELDS, toast } = window.Site;
   const $ = id => document.getElementById(id);
   const TYPES = ['Journal', 'Conference', 'Workshop', 'Book Chapter', 'Preprint', 'Tech Report'];
 
@@ -181,17 +181,17 @@
     const link = p.doi || (p.arxiv ? `https://arxiv.org/abs/${p.arxiv}` : '') || p.oa || p.scholar || `https://scholar.google.com/scholar?q=${encodeURIComponent(p.title)}`;
     const au = terms().length ? hl(p.authors).replace(/(A\.\s?Sarma|A Sarma)/, '<b>$1</b>') : boldMe(p.authors);
     const acts = [];
-    if (p.doi) acts.push(`<a href="${esc(p.doi)}" target="_blank" rel="noopener">${ICONS.ext}DOI</a>`);
-    if (p.oa) acts.push(`<a href="${esc(p.oa)}" target="_blank" rel="noopener">${ICONS.doc}PDF</a>`);
+    if (p.doi) acts.push(`<a href="${url(p.doi)}" target="_blank" rel="noopener">${ICONS.ext}DOI</a>`);
+    if (p.oa) acts.push(`<a href="${url(p.oa)}" target="_blank" rel="noopener">${ICONS.doc}PDF</a>`);
     if (p.arxiv) acts.push(`<a href="https://arxiv.org/abs/${esc(p.arxiv)}" target="_blank" rel="noopener">${ICONS.doc}arXiv</a>`);
-    if (!p.doi && !p.arxiv) acts.push(`<a href="${esc(p.scholar || `https://scholar.google.com/scholar?q=${encodeURIComponent(p.title)}`)}" target="_blank" rel="noopener">${ICONS.search}Scholar</a>`);
+    if (!p.doi && !p.arxiv) acts.push(`<a href="${url(p.scholar || `https://scholar.google.com/scholar?q=${encodeURIComponent(p.title)}`)}" target="_blank" rel="noopener">${ICONS.search}Scholar</a>`);
     if (p.abstract) acts.push(`<button type="button" data-abs="${p.id}" aria-expanded="${S.open.has(p.id)}">${ICONS.chevron}${S.open.has(p.id) ? 'Hide abstract' : 'Abstract'}</button>`);
     acts.push(`<button type="button" data-cite="${p.id}">${ICONS.quote}Cite</button>`);
     const tags = (p.tags || []).map(t => `<span class="tag" role="button" tabindex="0" data-tagfilter="${esc(t)}" style="--c:${FIELDS[t]}">${esc(t)}</span>`).join('');
     return `<article class="pub glass">
       <div class="venue"><span class="badge" title="${esc(p.venueShort || p.type)}">${esc(p.venueShort || p.type)}</span><span class="type">${esc(p.type)}${p.status ? ` · <span class="status">${esc(p.status)}</span>` : ''}</span></div>
       <div>
-        <h3><a href="${esc(link)}" target="_blank" rel="noopener">${hl(p.title)}</a></h3>
+        <h3><a href="${url(link)}" target="_blank" rel="noopener">${hl(p.title)}</a></h3>
         <div class="au">${au}</div>
         <div class="vf">${hl(p.venue)}${p._cites ? ` · ${p._cites} citation${p._cites === 1 ? '' : 's'}` : ''}</div>
         <div class="row">${p.award ? `<span class="award">${ICONS.trophy}${esc(p.award)}</span>` : ''}${tags}</div>

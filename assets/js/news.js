@@ -1,5 +1,5 @@
 (async function () {
-  const { esc, fmtDate, getJSON, ICONS, setupReveal } = window.Site;
+  const { esc, url, fmtDate, getJSON, ICONS, setupReveal } = window.Site;
   const $ = id => document.getElementById(id);
 
   const KIND_COLOR = {
@@ -26,7 +26,7 @@
   $('featured').innerHTML = feat.map(n => {
     const nyt = /New York Times/.test(n.outlet || '');
     const tag = n.url ? 'a' : 'div';
-    const href = n.url ? ` href="${esc(n.url)}" target="_blank" rel="noopener"` : '';
+    const href = n.url ? ` href="${url(n.url)}" target="_blank" rel="noopener"` : '';
     return `<${tag} class="fcard glass lift reveal" style="--c:${KIND_COLOR[n.type]}"${href}>
       <div class="top"><span class="kind" style="--c:${KIND_COLOR[n.type]}">${esc(n.type)}</span><span class="d">${fmtDate(n.date, true)}</span></div>
       <div class="outlet${nyt ? ' nyt' : ''}">${esc(n.outlet || '')}</div>
@@ -58,7 +58,7 @@
   // ---------- timeline ----------
   function itemHTML(n) {
     const tag = n.url ? 'a' : 'div';
-    const href = n.url ? ` href="${esc(n.url)}" target="_blank" rel="noopener"` : '';
+    const href = n.url ? ` href="${url(n.url)}" target="_blank" rel="noopener"` : '';
     const generic = n.title === 'Invited talk';
     return `<${tag} class="tl-item"${href}>
       <span class="d">${fmtDate(n.date).split(' ')[0]}</span>

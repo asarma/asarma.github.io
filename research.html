@@ -72,7 +72,7 @@
 <script src="assets/js/themes.js"></script>
 <script>
 (async function () {
-  const { esc, getJSON, setupReveal } = window.Site;
+  const { esc, url, getJSON, setupReveal } = window.Site;
   let pubs = [];
   try { pubs = await getJSON('data/publications.json'); } catch (e) {}
   const byId = Object.fromEntries(pubs.map(p => [p.id, p]));
@@ -80,7 +80,7 @@
     const count = pubs.filter(p => (p.tags || []).includes(t.tag)).length;
     const reps = t.reps.map(id => byId[id]).filter(Boolean).map(p => {
       const href = p.doi || (p.arxiv ? 'https://arxiv.org/abs/' + p.arxiv : 'publications.html?q=' + encodeURIComponent(p.title));
-      return `<a href="${esc(href)}" target="_blank" rel="noopener"><span>${esc(p.venueShort)} ${p.year}</span>${esc(p.title)}</a>`;
+      return `<a href="${url(href)}" target="_blank" rel="noopener"><span>${esc(p.venueShort)} ${p.year}</span>${esc(p.title)}</a>`;
     }).join('');
     return `<article class="theme-block glass reveal" id="${t.id}" style="--c:${t.color}">
       <div class="side">

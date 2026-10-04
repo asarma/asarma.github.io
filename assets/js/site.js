@@ -44,6 +44,9 @@
   // Paste the full LinkedIn profile URL here to show LinkedIn links across the site.
   const LINKEDIN = 'https://www.linkedin.com/in/anita-sarma/';
 
+  // Email is assembled only when clicked, so it never appears whole in the page source.
+  const EMAIL = ['anita.sarma', 'oregonstate.edu'];
+
   const here = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
 
   function renderNav() {
@@ -103,7 +106,7 @@
             <a href="https://epiclab.github.io/" target="_blank" rel="noopener">EPIC Lab</a>
             <a href="#" target="_blank" rel="noopener" data-linkedin hidden>LinkedIn</a>
             <a href="https://gendermag.org" target="_blank" rel="noopener">GenderMag</a>
-            <a href="mailto:anita.sarma@oregonstate.edu">Email</a>
+            <a href="#" data-email>Email</a>
           </nav>
         </div>
       </div>`;
@@ -119,6 +122,8 @@
   }
 
   // ---- helpers exposed to page scripts ----
+  // Data-driven links (some come from Scholar/OpenAlex) may only be web, mail, or same-site links.
+  const url = u => (/^(https?:|mailto:)/i.test(u) || !/^[^/?#]*:/.test(u ?? '')) ? esc(u) : '#';
   const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
   function fmtDate(iso, withDay) {
@@ -140,7 +145,7 @@
     clearTimeout(t._h); t._h = setTimeout(() => t.classList.remove('show'), 1800);
   }
 
-  window.Site = { ICONS, FIELDS, esc, fmtDate, getJSON, boldMe, toast, setupReveal };
+  window.Site = { ICONS, FIELDS, esc, url, fmtDate, getJSON, boldMe, toast, setupReveal };
 
   function wireLinkedIn() {
     if (!LINKEDIN) return;
@@ -150,8 +155,16 @@
     });
   }
 
+  function wireEmail() {
+    document.querySelectorAll('[data-email]').forEach(a => {
+      a.setAttribute('aria-label', 'Email Anita Sarma');
+      a.addEventListener('click', e => { e.preventDefault(); location.href = 'mailto:' + EMAIL.join('@'); });
+    });
+  }
+
   renderNav();
   renderFooter();
   wireLinkedIn();
+  wireEmail();
   setupReveal();
 })();

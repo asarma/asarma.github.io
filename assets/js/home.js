@@ -1,5 +1,5 @@
 (async function () {
-  const { esc, fmtDate, getJSON, boldMe, ICONS, setupReveal } = window.Site;
+  const { esc, url, fmtDate, getJSON, boldMe, ICONS, setupReveal } = window.Site;
 
   // Theme cards
   const themesEl = document.getElementById('themes');
@@ -25,7 +25,7 @@
     document.getElementById('stat-h').textContent = m.hIndex;
     document.getElementById('stat-i10').textContent = m.i10;
     if (m.updated) document.getElementById('stats-src').innerHTML =
-      `<a href="${esc(m.profile)}" target="_blank" rel="noopener">Google Scholar</a> metrics · updated ${fmtDate(m.updated, true)}`;
+      `<a href="${url(m.profile)}" target="_blank" rel="noopener">Google Scholar</a> metrics · updated ${fmtDate(m.updated, true)}`;
   } catch (e) { /* keep the numbers baked into the page */ }
 
   try {
@@ -34,7 +34,7 @@
 
     const latest = news.filter(n => !n.draft).slice(0, 6);
     document.getElementById('latest').innerHTML = latest.map(n => {
-      const attrs = n.url ? ` href="${esc(n.url)}" target="_blank" rel="noopener"` : ' href="news.html"';
+      const attrs = n.url ? ` href="${url(n.url)}" target="_blank" rel="noopener"` : ' href="news.html"';
       return `<a${attrs}>
         <span class="d">${fmtDate(n.date)}</span>
         <span class="t">${esc(n.title)}<span class="o">${esc(n.outlet || '')}</span></span>
@@ -46,7 +46,7 @@
     const sel = ids.map(id => pubs.find(p => p.id === id)).filter(Boolean);
     document.getElementById('selected').innerHTML = sel.map(p => {
       const href = p.doi || (p.arxiv ? `https://arxiv.org/abs/${p.arxiv}` : p.scholar || 'publications.html');
-      return `<a class="paper-card glass lift reveal" href="${esc(href)}" target="_blank" rel="noopener">
+      return `<a class="paper-card glass lift reveal" href="${url(href)}" target="_blank" rel="noopener">
         <div class="meta"><span class="badge">${esc(p.venueShort || p.type)}</span><span class="muted" style="font-size:13px">${p.year}</span>
           ${p.award ? `<span class="award">${ICONS.trophy}${esc(p.award)}</span>` : ''}</div>
         <h3>${esc(p.title)}</h3>
