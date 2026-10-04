@@ -569,20 +569,50 @@ a.person:hover h3 { color: var(--accent); }
   .portrait-frame { width: min(260px, 68%); margin: 0 auto; }
 }
 
-/* Bio section */
-.bio { display: grid; grid-template-columns: 300px 1fr; overflow: hidden; }
-.bio-side { padding: 34px; border-right: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 10px;
-  background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 75%); }
-.bio-side h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 3.6vw, 42px); margin: 4px 0 2px; }
-.bio-side p { font-size: 14.5px; margin: 0 0 8px; }
-.bio-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+/* Bio dialog */
+.bio-dialog { width: min(720px, calc(100% - 32px)); max-height: min(86vh, 760px); padding: 0; border: 1px solid var(--glass-border); border-radius: 24px;
+  background: var(--glass-strong); color: var(--ink); box-shadow: var(--shadow-lg); overflow: auto;
+  -webkit-backdrop-filter: blur(26px) saturate(160%); backdrop-filter: blur(26px) saturate(160%); }
+.bio-dialog::backdrop { background: rgba(20, 16, 36, 0.35); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+.bio-dialog[open] { animation: bio-in .25s cubic-bezier(.2,.7,.2,1); }
+@keyframes bio-in { from { opacity: 0; transform: translateY(10px) scale(.98); } }
+.bio-head { display: flex; justify-content: space-between; align-items: start; gap: 16px; padding: 26px 28px 6px; }
+.bio-head h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4vw, 40px); margin: 6px 0 0; }
+.bio-text { padding: 10px 28px 4px; }
+.bio-text p { font-size: 16px; line-height: 1.7; color: var(--ink-2); margin: 0 0 1em; }
+.bio-foot { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; padding: 16px 28px 24px; border-top: 1px solid var(--hairline); margin-top: 8px; font-size: 14px; }
+.bio-actions { display: flex; gap: 8px; flex-wrap: wrap; }
 .bio-actions .btn { padding: 10px 16px; font-size: 14px; }
-.bio-text { padding: 34px 38px; }
-.bio-text p { font-size: 16.5px; line-height: 1.7; color: var(--ink-2); margin: 0 0 1em; max-width: 72ch; }
-.bio-text p:last-child { margin-bottom: 0; }
-@media (max-width: 860px) {
-  .bio { grid-template-columns: 1fr; }
-  .bio-side { border-right: 0; border-bottom: 1px solid var(--hairline); padding: 26px; }
-  .bio-text { padding: 26px; }
-  .bio-actions { margin-top: 6px; }
+.bio-actions svg { width: 16px; height: 16px; }
+@media (max-width: 560px) { .bio-head, .bio-text, .bio-foot { padding-left: 20px; padding-right: 20px; } }
+
+/* Portrait flip card: photo on the front, short bio on the back (hover / focus / tap) */
+.flip { perspective: 1400px; cursor: pointer; }
+.flip-inner { position: relative; transform-style: preserve-3d; transition: transform .7s cubic-bezier(.2,.7,.2,1); }
+.flip-front, .flip-back { -webkit-backface-visibility: hidden; backface-visibility: hidden; border-radius: 26px; }
+.flip-front { position: relative; }
+.flip-back { position: absolute; inset: 0; transform: rotateY(180deg); display: flex; flex-direction: column; justify-content: center; gap: 14px;
+  padding: 30px 28px; overflow: auto; background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 12%, var(--glass-strong)), var(--glass-strong)); }
+.flip-back p { margin: 0; font-size: 15.5px; line-height: 1.6; color: var(--ink-2); }
+.flip-actions { display: flex; gap: 8px; flex-wrap: wrap; }
+.flip-actions .btn { padding: 9px 15px; font-size: 13.5px; }
+.flip-hint { position: absolute; right: 12px; top: 12px; display: inline-flex; align-items: center; gap: 6px; padding: 5px 10px 5px 8px;
+  border-radius: 999px; font-size: 12px; font-weight: 600; color: var(--ink); background: var(--glass-strong); border: 1px solid var(--glass-border);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); }
+.flip-hint svg { width: 13px; height: 13px; color: var(--accent); }
+.flip.is-flipped .flip-inner, .flip:focus-visible .flip-inner { transform: rotateY(180deg); }
+@media (hover: hover) and (pointer: fine) { .flip:hover .flip-inner { transform: rotateY(180deg); } .portrait:has(.flip:hover) .float-labels { opacity: 0; pointer-events: none; } }
+.float-labels { transition: opacity .3s; }
+.portrait:has(.flip.is-flipped) .float-labels, .portrait:has(.flip:focus-visible) .float-labels { opacity: 0; pointer-events: none; }
+@media (prefers-reduced-motion: reduce) {
+  .flip-inner { transform: none !important; }
+  .flip-back { transform: none; opacity: 0; transition: opacity .2s; }
+  .flip.is-flipped .flip-back, .flip:focus-visible .flip-back { opacity: 1; }
+  @media (hover: hover) { .flip:hover .flip-back { opacity: 1; } }
 }
+@media (max-width: 900px) {
+  .flip-back { padding: 18px; gap: 10px; border-radius: 22px; }
+  .flip-back p { font-size: 13px; line-height: 1.5; }
+  .flip-actions .btn { padding: 7px 12px; font-size: 12.5px; }
+}
+@media (max-width: 900px) { .flip .flip-inner { transform: none !important; } .flip-back { display: none; } .portrait .float-labels { opacity: 1 !important; pointer-events: auto !important; } }

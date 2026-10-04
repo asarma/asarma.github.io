@@ -60,22 +60,48 @@
     document.getElementById('latest').innerHTML = '<div style="padding:22px" class="muted">News could not be loaded. If you opened this file directly, run it from a local web server.</div>';
   }
   // Copy the bio as plain text (for organizers and press)
-  async function copyBio(e) {
-    e?.preventDefault();
+  // Portrait flip: tap / Enter / Space toggles (hover handles mouse users in CSS)
+  const flip = document.getElementById('flip');
+  const setFlip = on => { flip.classList.toggle('is-flipped', on); flip.setAttribute('aria-pressed', String(on)); };
+  const small = matchMedia('(max-width: 900px)');   // photo is too small for text: open the full bio instead
+  flip?.addEventListener('click', e => {
+    if (e.target.closest('button')) return;
+    if (small.matches) { openBio(e); return; }
+    setFlip(!flip.classList.contains('is-flipped'));
+  });
+  flip?.addEventListener('keydown', e => { if ((e.key === 'Enter' || e.key === ' ') && e.target === flip) { e.preventDefault(); setFlip(!flip.classList.contains('is-flipped')); } });
+  document.getElementById('copy-short-bio')?.addEventListener('click', async e => {
+    const btn = e.currentTarget, text = document.getElementById('short-bio').textContent.trim();
+    let ok = false;
+    try { await navigator.clipboard.writeText(text); ok = true; } catch (err) {
+      const ta = Object.assign(document.createElement('textarea'), { value: text }); ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select(); try { ok = document.execCommand('copy'); } catch (_) {} ta.remove();
+    }
+    const old = btn.textContent; btn.textContent = ok ? 'Copied ✓' : 'Select text to copy';
+    setTimeout(() => { btn.textContent = old; }, 2000);
+  });
+
+  // Bio dialog: opened from the "Bio" pill; Copy puts the plain text on the clipboard
+  const bioDlg = document.getElementById('bio');
+  const openBio = e => { e?.preventDefault(); bioDlg.showModal ? bioDlg.showModal() : bioDlg.setAttribute('open', ''); };
+  document.getElementById('bio-pill')?.addEventListener('click', openBio);
+  document.querySelectorAll('[data-open-bio]').forEach(b => b.addEventListener('click', openBio));
+  bioDlg?.querySelector('[data-close]')?.addEventListener('click', () => bioDlg.close());
+  bioDlg?.addEventListener('click', e => { if (e.target === bioDlg) bioDlg.close(); });   // click outside the panel
+  if (location.hash === '#bio') openBio();
+  const copyBtn = document.getElementById('copy-bio');
+  const flash = label => {   // feedback on the button itself (a toast would sit behind the open dialog)
+    const html = copyBtn.innerHTML; copyBtn.textContent = label;
+    setTimeout(() => { copyBtn.innerHTML = html; }, 2200);
+  };
+  copyBtn?.addEventListener('click', async () => {
     const text = [...document.querySelectorAll('#bio-text p')].map(p => p.textContent.trim()).join('\n\n');
-    const show = () => document.getElementById('bio').scrollIntoView({ behavior: 'smooth', block: 'center' });
-    try { await navigator.clipboard.writeText(text); window.Site.toast('Bio copied to clipboard'); show(); return; } catch (err) {}
-    // Fallback for browsers without clipboard permission
-    const ta = Object.assign(document.createElement('textarea'), { value: text });
-    ta.style.cssText = 'position:fixed;opacity:0'; document.body.appendChild(ta); ta.select();
+    try { await navigator.clipboard.writeText(text); flash('Copied ✓'); return; } catch (err) {}
+    const sel = getSelection(); const range = document.createRange();
+    range.selectNodeContents(document.getElementById('bio-text')); sel.removeAllRanges(); sel.addRange(range);
     let ok = false; try { ok = document.execCommand('copy'); } catch (err) {}
-    ta.remove();
-    if (ok) { window.Site.toast('Bio copied to clipboard'); show(); return; }
-    show();
-    window.Site.toast('Select the bio text to copy it');
-  }
-  document.getElementById('copy-bio')?.addEventListener('click', copyBio);
-  document.getElementById('bio-pill')?.addEventListener('click', copyBio);
+    flash(ok ? 'Copied ✓' : 'Selected: press ⌘C');
+  });
 
   setupReveal();
 
