@@ -476,9 +476,8 @@ a.tl-item:hover { background: var(--glass-soft); }
 @media (max-width: 560px) { .role-list > div { grid-template-columns: 1fr; gap: 2px; } }
 
 /* ---------- Footer ---------- */
-footer { padding: 28px 0 40px; }
-.foot { display: flex; justify-content: space-between; align-items: center; gap: 18px; flex-wrap: wrap; padding: 22px 26px; font-size: 14px; color: var(--muted); }
-.foot nav { display: flex; gap: 6px 18px; flex-wrap: wrap; }
+footer { padding: 8px 0 36px; }
+.foot { display: flex; justify-content: space-between; align-items: center; gap: 12px 18px; flex-wrap: wrap; padding: 18px 4px 0; border-top: 1px solid var(--hairline); font-size: 13.5px; color: var(--muted); }
 .foot a { text-decoration: none; color: var(--ink-2); }
 .foot a:hover { color: var(--accent); }
 

@@ -96,18 +96,13 @@
   function renderFooter() {
     const el = document.getElementById('site-footer');
     if (!el) return;
+    // Slim sign-off line; full contact details live in the home page's contact section
+    const onHome = here === 'index.html' || here === '';
     el.innerHTML = `
       <div class="wrap">
-        <div class="foot glass">
-          <div>© ${new Date().getFullYear()} Anita Sarma · Oregon State University</div>
-          <nav aria-label="Elsewhere">
-            <a href="https://scholar.google.com/citations?user=shMjCasAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
-            <a href="https://dblp.org/pid/26/6565.html" target="_blank" rel="noopener">DBLP</a>
-            <a href="https://epiclab.github.io/" target="_blank" rel="noopener">EPIC Lab</a>
-            <a href="#" target="_blank" rel="noopener" data-linkedin hidden>LinkedIn</a>
-            <a href="https://gendermag.org" target="_blank" rel="noopener">GenderMag</a>
-            <a href="#" data-email>Email</a>
-          </nav>
+        <div class="foot">
+          <span>© ${new Date().getFullYear()} Anita Sarma · Oregon State University</span>
+          ${onHome ? '' : '<a href="index.html#contact">Contact</a>'}
         </div>
       </div>`;
   }
