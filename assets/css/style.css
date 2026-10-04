@@ -25,14 +25,14 @@
   --bg: #eef0f7;
   --bg-2: #e6e9f4;
   --ink: #0e1124;
-  --ink-2: #2a2f4a;
-  --muted: #5a607a;
-  --faint: #8a90a8;
-  --accent: #4f46e5;
-  --accent-2: #0d9488;
-  --accent-3: #e2557b;
+  --ink-2: #252a44;
+  --muted: #434962;
+  --faint: #565c73;
+  --accent: #4338ca;
+  --accent-2: #0f766e;
+  --accent-3: #be185d;
   --accent-ink: #ffffff;
-  --gold: #b7791f;
+  --gold: #8a5a00;
 
   --glass: rgba(255, 255, 255, 0.58);
   --glass-strong: rgba(255, 255, 255, 0.78);
@@ -532,3 +532,11 @@ a.person:hover h3 { color: var(--accent); }
 .contact-row a:hover { color: var(--accent); border-color: color-mix(in srgb, var(--accent) 45%, var(--hairline)); background: var(--glass); }
 .contact-row svg { width: 15px; height: 15px; flex: none; color: var(--accent); }
 @media (max-width: 640px) { .contact-row a { font-size: 13px; } }
+
+/* Light-mode legibility (WCAG AA): softer glow behind text, darker label colours */
+:root:not([data-theme="dark"]) .aurora span { opacity: 0.42; }
+:root:not([data-theme="dark"]) .aurora .b3 { opacity: 0.32; }
+:root:not([data-theme="dark"]) .aurora .b4 { opacity: 0.28; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .aurora span { opacity: 0.35; } }
+:root:not([data-theme="dark"]) .kind { color: color-mix(in srgb, var(--c) 55%, #000); }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .kind { color: var(--c); } }
