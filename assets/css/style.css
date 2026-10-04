@@ -33,6 +33,7 @@
   --accent-3: #a21caf;
   --accent-ink: #ffffff;
   --gold: #6b5a00;
+  --grad-text: linear-gradient(100deg, #4338ca 0%, #7c3aed 38%, #c026d3 72%, #db2777 100%);
 
   --glass: rgba(255, 255, 255, 0.62);
   --glass-strong: rgba(255, 255, 255, 0.78);
@@ -69,6 +70,7 @@
     --accent-3: #f0abfc;
     --accent-ink: #140b24;
     --gold: #f6c561;
+    --grad-text: linear-gradient(100deg, #a5b4fc 0%, #c4b5fd 35%, #f0abfc 70%, #f9a8d4 100%);
     --glass: rgba(27, 24, 40, 0.6);
     --glass-strong: rgba(32, 28, 48, 0.82);
     --glass-soft: rgba(27, 24, 40, 0.38);
@@ -95,6 +97,7 @@
   --accent-3: #f0abfc;
   --accent-ink: #140b24;
   --gold: #f6c561;
+    --grad-text: linear-gradient(100deg, #a5b4fc 0%, #c4b5fd 35%, #f0abfc 70%, #f9a8d4 100%);
   --glass: rgba(27, 24, 40, 0.6);
   --glass-strong: rgba(32, 28, 48, 0.82);
   --glass-soft: rgba(27, 24, 40, 0.38);
@@ -187,7 +190,7 @@ section { margin: 0 0 88px; }
 
 .page-hero { padding: 36px 0 12px; margin-bottom: 40px; }
 .page-hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(44px, 7vw, 84px); letter-spacing: -0.025em; line-height: 1; margin: 12px 0 16px; }
-.page-hero h1 em { font-style: italic; background: linear-gradient(100deg, var(--accent), var(--accent-2) 60%, var(--accent-3)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
+.page-hero h1 em { font-style: italic; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .06em; }
 .page-hero p { font-size: clamp(17px, 1.6vw, 19.5px); color: var(--muted); max-width: 62ch; }
 
 /* ---------- Nav ---------- */
@@ -237,7 +240,7 @@ section { margin: 0 0 88px; }
 /* ---------- Home hero ---------- */
 .hero { display: grid; grid-template-columns: 1.25fr .85fr; gap: 48px; align-items: center; padding: 40px 0 24px; margin-bottom: 64px; }
 .hero h1 { font-family: var(--serif); font-weight: 400; font-size: clamp(56px, 9vw, 116px); line-height: .92; letter-spacing: -0.035em; margin: 18px 0 22px; }
-.hero h1 em { font-style: italic; background: linear-gradient(100deg, var(--accent) 10%, var(--accent-2) 55%, var(--accent-3)); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .08em; }
+.hero h1 em { font-style: italic; background: var(--grad-text); -webkit-background-clip: text; background-clip: text; color: transparent; padding-right: .08em; }
 .hero .role { font-size: 17px; color: var(--ink-2); font-weight: 520; margin-bottom: 18px; }
 .hero .lede { font-size: clamp(17.5px, 1.7vw, 20.5px); line-height: 1.55; color: var(--muted); max-width: 54ch; margin-bottom: 30px; }
 .hero .lede strong { color: var(--ink); font-weight: 560; }
