@@ -540,24 +540,24 @@ a.person:hover h3 { color: var(--accent); }
 
 /* Cumulative highlight labels floating around the portrait (built from site data) */
 .float-labels { position: absolute; inset: 0; pointer-events: none; }
-.float-label { position: absolute; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 16px; max-width: 255px;
+.float-label { position: absolute; display: flex; align-items: center; gap: 8px; padding: 7px 11px 7px 8px; border-radius: 14px; white-space: nowrap;
   text-decoration: none; pointer-events: auto; line-height: 1.25; animation: bob 8s ease-in-out infinite;
   background: var(--glass-strong); border: 1px solid var(--glass-border); box-shadow: var(--shadow-lg);
   -webkit-backdrop-filter: blur(18px) saturate(160%); backdrop-filter: blur(18px) saturate(160%); }
-.float-label b { display: block; font-size: 13.5px; font-weight: 620; color: var(--ink); }
-.float-label small { display: block; font-size: 11.5px; color: var(--muted); margin-top: 2px; }
-.float-label .ic { width: 32px; height: 32px; border-radius: 10px; display: grid; place-items: center; color: #fff; flex: none;
+.float-label b { display: block; font-size: 12.5px; font-weight: 620; color: var(--ink); }
+.float-label small { display: block; font-size: 11px; color: var(--muted); margin-top: 1px; }
+.float-label .ic { width: 26px; height: 26px; border-radius: 8px; display: grid; place-items: center; color: #fff; flex: none;
   background: linear-gradient(135deg, var(--c), color-mix(in srgb, var(--c) 60%, #000)); }
-.float-label .ic svg { width: 16px; height: 16px; }
+.float-label .ic svg { width: 14px; height: 14px; }
 .float-label:hover { transform: translateY(-2px); }
 .float-label:hover b { color: var(--accent); }
-.float-label.p1 { top: 1%; left: -10%; }
-.float-label.p2 { top: 20%; right: -20%; animation-delay: -2s; }
-.float-label.p3 { bottom: 26%; left: -12%; animation-delay: -4s; }
-.float-label.p4 { bottom: 4%; right: -14%; animation-delay: -6s; }
+.float-label.p1 { top: -4%; left: -8%; }
+.float-label.p2 { top: 30%; right: -16%; animation-delay: -2s; }
+.float-label.p3 { bottom: 18%; left: -12%; animation-delay: -4s; }
+.float-label.p4 { bottom: -5%; right: -6%; animation-delay: -6s; }
 @keyframes bob { 50% { transform: translateY(-7px); } }
 @media (max-width: 1240px) { .float-label.p2, .float-label.p4 { right: -4%; } }
-@media (max-width: 1100px) { .float-label.p1, .float-label.p3 { left: -6%; } .float-label.p2, .float-label.p4 { right: 0; } .float-label { max-width: 230px; } }
+@media (max-width: 1100px) { .float-label.p1, .float-label.p3 { left: -6%; } .float-label.p2, .float-label.p4 { right: -2%; } }
 @media (max-width: 900px) {
   .float-labels { position: static; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 14px; }
   .float-label { position: static; max-width: none; animation: none; padding: 8px 10px; }
@@ -567,4 +567,22 @@ a.person:hover h3 { color: var(--accent); }
 @media (max-width: 900px) {
   .portrait { width: 100%; }
   .portrait-frame { width: min(260px, 68%); margin: 0 auto; }
+}
+
+/* Bio section */
+.bio { display: grid; grid-template-columns: 300px 1fr; overflow: hidden; }
+.bio-side { padding: 34px; border-right: 1px solid var(--hairline); display: flex; flex-direction: column; gap: 10px;
+  background: linear-gradient(160deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 75%); }
+.bio-side h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(32px, 3.6vw, 42px); margin: 4px 0 2px; }
+.bio-side p { font-size: 14.5px; margin: 0 0 8px; }
+.bio-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+.bio-actions .btn { padding: 10px 16px; font-size: 14px; }
+.bio-text { padding: 34px 38px; }
+.bio-text p { font-size: 16.5px; line-height: 1.7; color: var(--ink-2); margin: 0 0 1em; max-width: 72ch; }
+.bio-text p:last-child { margin-bottom: 0; }
+@media (max-width: 860px) {
+  .bio { grid-template-columns: 1fr; }
+  .bio-side { border-right: 0; border-bottom: 1px solid var(--hairline); padding: 26px; }
+  .bio-text { padding: 26px; }
+  .bio-actions { margin-top: 6px; }
 }
