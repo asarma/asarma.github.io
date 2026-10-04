@@ -77,3 +77,16 @@ Optional: `abstract` (searchable, shown on expand), `oa` (open-access PDF link),
 3. In the repo: **Settings → Pages → Build and deployment → Deploy from a branch → `main` / root**.
 
 `_archive/` (the saved copy of the old WordPress home page) is git-ignored.
+
+## Automatic updates
+
+A scheduled task in the Claude app (“Website & CV daily update”, 7:05 AM daily) runs `tools/daily_update.sh`:
+
+1. `tools/update_scholar.py` — pulls citations, h-index, i10 and per-paper citation counts from Google Scholar into `data/metrics.json` / `data/publications.json`, adds new papers (tagged by field) and a news item for each, and upgrades preprints when the published version appears. Titles listed in `tools/scholar_ignore.json` are never added.
+2. `tools/cv_sync.py` — inserts anything new (papers, awards, talks, media from `data/news.json`) into the newest `sarma_CV_*.docx`, in your CV's own format. `tools/cv_state.json` records what is already in the CV.
+3. `tools/export_cv_pdf.sh` — re-exports `assets/Sarma_CV.pdf` with Microsoft Word.
+4. Commits and pushes to GitHub, which republishes the site.
+
+On Mondays the task also searches the web for new awards, keynotes and media coverage and adds verified items.
+Google Scholar has to be read from your own computer (it blocks cloud servers), so the task runs on this Mac while the Claude app is open; if the Mac is asleep at 7:05 it runs at the next launch.
+The home page reads `data/metrics.json` on every visit, so the numbers shown are always the latest pulled.

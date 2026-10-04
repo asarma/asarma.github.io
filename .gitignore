@@ -2,3 +2,4 @@
 _archive/
 *.docx
 .claude/
+_test/

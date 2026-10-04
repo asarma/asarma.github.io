@@ -17,6 +17,17 @@
       <span class="more">Open the library →</span>
     </a>`;
 
+  // Citation metrics: refreshed daily from Google Scholar into data/metrics.json, read fresh on every visit
+  try {
+    const m = await getJSON('data/metrics.json');
+    const fmt = n => Number(n).toLocaleString('en-US');
+    document.getElementById('stat-cites').textContent = fmt(m.citations);
+    document.getElementById('stat-h').textContent = m.hIndex;
+    document.getElementById('stat-i10').textContent = m.i10;
+    if (m.updated) document.getElementById('stats-src').innerHTML =
+      `<a href="${esc(m.profile)}" target="_blank" rel="noopener">Google Scholar</a> metrics · updated ${fmtDate(m.updated, true)}`;
+  } catch (e) { /* keep the numbers baked into the page */ }
+
   try {
     const [news, pubs] = await Promise.all([getJSON('data/news.json'), getJSON('data/publications.json')]);
     document.getElementById('stat-pubs').textContent = Math.floor(pubs.filter(p => p.type !== 'Tech Report').length / 10) * 10 + '+';
