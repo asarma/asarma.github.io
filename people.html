@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>People · Anita Sarma</title>
+<meta name="description" content="Current students and alumni of Anita Sarma's research group at Oregon State University.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+<div class="grain" aria-hidden="true"></div>
+<header id="site-nav"></header>
+
+<main class="wrap">
+  <div class="page-hero reveal">
+    <span class="eyebrow">People</span>
+    <h1>The people behind <em>the work</em></h1>
+    <p>My students and postdocs have gone on to faculty positions, research labs, and industry. The group is part of the <a href="https://epiclab.github.io/" target="_blank" rel="noopener">EPIC Lab</a> at Oregon State.</p>
+  </div>
+
+  <section>
+    <div class="section-head reveal"><div><span class="eyebrow">Current</span><h2>PhD students</h2></div></div>
+    <div class="grid g3" id="current"></div>
+  </section>
+
+  <section>
+    <div class="section-head reveal"><div><span class="eyebrow">Alumni</span><h2>PhD graduates &amp; postdocs</h2><p>Where they are now.</p></div></div>
+    <div class="grid g3" id="alumni"></div>
+  </section>
+
+  <section>
+    <div class="section-head reveal"><div><span class="eyebrow">Alumni</span><h2>Master’s students</h2></div></div>
+    <div class="card glass reveal"><div class="cols" id="ms"></div></div>
+  </section>
+
+  <section>
+    <div class="section-head reveal"><div><span class="eyebrow">Mentoring</span><h2>Undergraduate &amp; high school researchers</h2><p>Over 35 undergraduate and high school students have done research in the group. Several received honors-thesis, Adobe Women in Technology, and NCWIT Aspirations in Computing awards.</p></div></div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/js/site.js"></script>
+<script>
+(function () {
+  const { esc, setupReveal } = window.Site;
+  const C = ['#6d5efc', '#0ea5e9', '#e2557b', '#10b981', '#f59e0b', '#3b82f6', '#a855f7', '#14b8a6'];
+  const ini = n => n.split(/\s+/).map(w => w[0]).slice(0, 2).join('');
+  // Whole card links out when we have a page for the person
+  const card = (p, i) => {
+    const inner = `<span class="avatar">${esc(ini(p[0]))}</span>
+      <div><h3>${esc(p[0])}${p[2] ? '<span class="ext-mark" aria-hidden="true"> ↗</span>' : ''}</h3><p>${esc(p[1])}</p></div>`;
+    return p[2]
+      ? `<a class="person glass lift reveal" style="--c:${C[i % C.length]}" href="${p[2]}" target="_blank" rel="noopener" aria-label="${esc(p[0])}: open profile">${inner}</a>`
+      : `<div class="person glass reveal" style="--c:${C[i % C.length]}">${inner}</div>`;
+  };
+
+  // [name, role, link] — official university page first, then personal site, then LinkedIn / Google Scholar
+  const current = [
+    ['Rudrajit Choudhuri', 'PhD, expected 2026', 'https://rudrajit1729.github.io/'],
+    ['Sadia Afroz', 'PhD, expected 2027 (co-advised)', 'https://scholar.google.com/citations?user=MHeNuOYAAAAJ&hl=en'],
+    ['Md Montaser Hamid', 'PhD, expected 2027 (co-advised)', 'https://www.linkedin.com/in/md-montaser-hamid-64722716b/'],
+    ['Olivia Schutz', 'PhD, expected 2030', 'https://www.linkedin.com/in/olivia-e-schutz/'],
+    ['Larissa Letaw', 'PhD, expected 2030', 'https://engineering.oregonstate.edu/people/lara-letaw'],
+    ['Rachel Xing', 'PhD, expected 2030'],
+    ['Fatima Moussaoui', 'PhD, expected 2030 (co-advised)', 'https://www.linkedin.com/in/fatima-moussaoui-b58370239/'],
+  ];
+  const alumni = [
+    ['Zixuan Feng', 'PhD 2026 · Tenure-track Assistant Professor, Virginia Commonwealth University', 'https://zixuanfeng.github.io/zixuanfeng_page/'],
+    ['Amreeta Chatterjee', 'PhD 2024 · Tenure-track Assistant Professor, SUNY Albany', 'https://www.albany.edu/computer-science/faculty/amreeta-chatterjee'],
+    ['Nicholas Nelson', 'PhD 2024 · Industry', 'https://www.linkedin.com/in/nelsonni1/'],
+    ['Mariam Guizani', 'PhD 2023 · Assistant Professor, Queen’s University', 'https://smithengineering.queensu.ca/directory/faculty/mariam-guizani'],
+    ['Mahsa Saeidi', 'PhD 2022 · Assistant Professor, University of Tehran', 'https://profile.ut.ac.ir/en/~mahsa.saeidi'],
+    ['Souti Chattopadhyay', 'PhD 2022 · Assistant Professor, USC', 'https://viterbi.usc.edu/directory/faculty/Chattopadhyay/Souti'],
+    ['Caius Brindescu', 'PhD 2020 (co-chair) · Industry', 'https://caius.brindescu.com/'],
+    ['Umme Ayda Mannan', 'PhD 2020 (co-chair) · Instructor, UC Irvine', 'https://www.linkedin.com/in/umme-ayda-mannan-830b17132/'],
+    ['Bakhtiar Khan Kasi', 'PhD 2015, UNL · Professor & Dean, BUITEMS', 'http://bakhtiarkasi.com/'],
+    ['Sandeep Kuttal', 'PhD 2014, UNL · Associate Professor, NC State', 'https://csc.ncsu.edu/people/skuttal/'],
+    ['Bianca Trinkenreich', 'Postdoc · Assistant Professor, Colorado State', 'https://biancatrink.github.io/'],
+    ['Xiaofan Chen', 'Postdoc · Lecturer, Massey University', 'https://www.massey.ac.nz/massey/expertise/profile.cfm?stref=716122'],
+  ];
+  const ms = [
+    ['Ambareesh Ramakrishna', '2025'], ['Soumiki Chattopadhyay', '2025'], ['Prashant Tandan', '2025'],
+    ['Pannapat Chanpaisaeng', '2023'], ['Emily Arteaga', '2023'], ['Neha Sajnani', '2023'], ['Puja Agarwal', '2023'],
+    ['Turgay Caglar', '2021'], ['Manideepa Saginatham', '2020'], ['Marjan Adeli', '2020'], ['Sogol Balali', '2019'],
+    ['Shane McKee', '2016'], ['Kevin North', '2016'], ['Corey Jergensen', '2013'], ['Jianguo Wang', '2012'],
+  ];
+  document.getElementById('current').innerHTML = current.map(card).join('');
+  document.getElementById('alumni').innerHTML = alumni.map(card).join('');
+  document.getElementById('ms').innerHTML = ms.map(([n, y]) => `<div>${esc(n)}<span>${y}</span></div>`).join('');
+  setupReveal();
+})();
+</script>
+</body>
+</html>

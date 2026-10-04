@@ -1,0 +1,568 @@
+[
+ {
+  "date": "2026-09-18",
+  "type": "Award",
+  "title": "IEEE Distinguished Paper Award — ICSME 2026 Industry Track",
+  "outlet": "ICSME 2026",
+  "summary": "“To Copilot and Beyond: 22 AI Systems Developers Want Built” with Rudrajit Choudhuri, Christian Bird, and Carmen Badea.",
+  "featured": true
+ },
+ {
+  "date": "2026-09-16",
+  "type": "Keynote",
+  "title": "Intentional Evolution: Three Ways to Evolve, and the One That’s a Trap",
+  "outlet": "ICSME 2026 — Benevento, Italy",
+  "url": "https://conf.researchr.org/info/icsme-2026/keynotes",
+  "summary": "When AI hands back work that looks finished, the trap is handing off the part that was your craft. On cognitive debt, professional identity, and open source maintainers’ finite attention.",
+  "featured": true
+ },
+ {
+  "date": "2026-09-15",
+  "type": "Press",
+  "title": "An M.I.T. Report Warns A.I. Is Causing “Cognitive Surrender.” Universities Are in a Bind.",
+  "outlet": "The New York Times",
+  "url": "https://www.nytimes.com/2026/09/15/us/universities-ai-warnings-enthusiasm.html",
+  "summary": "Quoted on what our research shows about AI and student cognition — and why universities should teach responsible use rather than try to ban it.",
+  "featured": true
+ },
+ {
+  "date": "2026-09-01",
+  "type": "Paper",
+  "title": "“Thinking Less, Trusting More” accepted to Information and Software Technology",
+  "outlet": "IST",
+  "url": "https://doi.org/10.1016/j.infsof.2026.108346",
+  "summary": "GenAI’s impacts on students’ cognitive habits — the study behind this spring’s media coverage."
+ },
+ {
+  "date": "2026-08-01",
+  "type": "Newsletter",
+  "title": "Where do developers draw the line on AI autonomy?",
+  "outlet": "Research-Driven Engineering Leadership (RDEL #158)",
+  "url": "https://rdel.substack.com/p/rdel-158-where-do-developers-draw",
+  "summary": "Feature on our study “You Shall Not Pass! Where and Why Developers Draw the Line on AI Autonomy.”"
+ },
+ {
+  "date": "2026-08-01",
+  "type": "Paper",
+  "title": "“What Needs Attention?” accepted to ACM TOSEM",
+  "outlet": "TOSEM",
+  "url": "https://dl.acm.org/doi/10.1145/3842739",
+  "summary": "Prioritizing the drivers of developers’ trust in and adoption of generative AI."
+ },
+ {
+  "date": "2026-08-01",
+  "type": "Keynote",
+  "title": "What Do We Optimize For? Meaningful Design in the Age of AI",
+  "outlet": "Microsoft",
+  "featured": true
+ },
+ {
+  "date": "2026-07-01",
+  "type": "Newsletter",
+  "title": "Five studies that are changing how I think about AI in software engineering",
+  "outlet": "DX Engineering Enablement",
+  "url": "https://newsletter.getdx.com/p/five-studies-that-are-changing-how",
+  "summary": "Brian Houck highlights “To Copilot and Beyond: 22 AI Systems Developers Want Built.”"
+ },
+ {
+  "date": "2026-05-06",
+  "type": "Radio",
+  "title": "Mindblowing: The staggering “cognitive debt” of generative AI in education",
+  "outlet": "Jefferson Public Radio — The Jefferson Exchange",
+  "url": "https://www.ijpr.org/podcast/the-jefferson-exchange/2026-05-06/mindblowing-the-staggering-cognitive-debt-of-generative-ai-in-education",
+  "summary": "Conversation about our study of 299 STEM students and the “cognitive debt cycle” of habitual GenAI use.",
+  "featured": true
+ },
+ {
+  "date": "2026-05-05",
+  "type": "TV",
+  "title": "AI’s impact on students’ cognitive engagement",
+  "outlet": "KGW TV News (Portland)",
+  "url": "https://www.youtube.com/watch?v=3m1ZyJx4sic&t=16m",
+  "summary": "KGW covers “Thinking Less, Trusting More” with Rudrajit Choudhuri. Also picked up by Straight Arrow News and The News Guard.",
+  "featured": true
+ },
+ {
+  "date": "2026-05-04",
+  "type": "TV",
+  "title": "Oregon State study raises concerns about AI’s impact on student thinking skills",
+  "outlet": "KATU News (Portland)",
+  "url": "https://katu.com/news/project-education/oregon-state-study-raises-concerns-about-ais-impact-on-student-thinking-skills-artificial-intelligence-schools-students-teachers-parents-learning-pps-computers-technology",
+  "summary": "Reliance on GenAI linked to a 66% decline in reflection and a 41% drop in critical thinking among STEM students."
+ },
+ {
+  "date": "2026-05-04",
+  "type": "TV",
+  "title": "Artificial intelligence reliance may harm STEM students, Oregon State University study says",
+  "outlet": "KOIN 6 News",
+  "url": "https://www.koin.com/news/oregon/osu-study-warns-of-declining-cognitive-ability-as-ai-use-grows-in-stem-fields/",
+  "summary": "Coverage of our findings on how GenAI changes how students think, learn, and judge their own understanding."
+ },
+ {
+  "date": "2026-04-15",
+  "type": "Paper",
+  "title": "Two ICSE 2026 papers presented in Rio de Janeiro",
+  "outlet": "ICSE 2026",
+  "summary": "“From Gains to Strains: Modeling Developer Burnout with GenAI Adoption” (SEIS) and “A Comparison of Conversational Models and Humans in Answering Technical Questions: the Firefox Case.”"
+ },
+ {
+  "date": "2026-04-01",
+  "type": "Paper",
+  "title": "“Fast, easy, simple”? accepted at CHI 2026",
+  "outlet": "CHI 2026",
+  "summary": "SES-diverse transfer students’ sociotechnical experiences registering for classes."
+ },
+ {
+  "date": "2026-04-01",
+  "type": "Service",
+  "title": "Co-located conferences co-chair, ICSE 2026",
+  "outlet": "ICSE 2026"
+ },
+ {
+  "date": "2025-10-01",
+  "type": "Award",
+  "title": "Best Paper Award — ESEM 2025",
+  "outlet": "ESEM 2025",
+  "summary": "“When Domains Collide: An Activity Theory Exploration of Cross-Disciplinary Collaboration” with Zixuan Feng, Thomas Zimmermann, and colleagues at Microsoft.",
+  "featured": true
+ },
+ {
+  "date": "2025-08-01",
+  "type": "Keynote",
+  "title": "Gates, Not Heroes: Designing meaningful work when AI moves faster than we can check it",
+  "outlet": "Sandia National Laboratories"
+ },
+ {
+  "date": "2025-07-01",
+  "type": "Service",
+  "title": "Appointed Interim Associate School Head, EECS",
+  "outlet": "Oregon State University"
+ },
+ {
+  "date": "2025-06-01",
+  "type": "Talk",
+  "title": "GenderMag Automated: An AI-Infused Inclusivity Checker",
+  "outlet": "MOSIP (with Rudrajit Choudhuri)"
+ },
+ {
+  "date": "2025-06-01",
+  "type": "Award",
+  "title": "OSU College of Engineering Mentoring Award",
+  "outlet": "Oregon State University"
+ },
+ {
+  "date": "2025-02-01",
+  "type": "Talk",
+  "title": "OSS sustainability through the lens of inclusivity",
+  "outlet": "CURIOSS"
+ },
+ {
+  "date": "2024-11-01",
+  "type": "Talk",
+  "title": "OSS sustainability in the wave of AI",
+  "outlet": "Open Source Forum"
+ },
+ {
+  "date": "2024-09-01",
+  "type": "Talk",
+  "title": "Skill building: The triad of mentoring, allyship, and code reviews",
+  "outlet": "Microsoft Research"
+ },
+ {
+  "date": "2024-07-01",
+  "type": "Keynote",
+  "title": "The Ins and Outs of Mentoring",
+  "outlet": "SciPy 2024"
+ },
+ {
+  "date": "2024-04-01",
+  "type": "Panel",
+  "title": "Diversity in Software Development Teams",
+  "outlet": "SAP BWN Community"
+ },
+ {
+  "date": "2024-04-01",
+  "type": "Award",
+  "title": "Distinguished Reviewer, ICSE 2024",
+  "outlet": "ICSE 2024"
+ },
+ {
+  "date": "2024-02-28",
+  "type": "Podcast",
+  "title": "Counting Potatoes vs. Computational Mysticism — Using CHAOSS for Research",
+  "outlet": "CHAOSScast, Episode 80",
+  "url": "https://podcast.chaoss.community/80",
+  "summary": "On using community health metrics in open source research."
+ },
+ {
+  "date": "2023-11-01",
+  "type": "Keynote",
+  "title": "Designing for Inclusive Software",
+  "outlet": "Brazilian Symposium on Software Quality (SBQS)"
+ },
+ {
+  "date": "2023-10-01",
+  "type": "Talk",
+  "title": "Integrating GenAI into the SE workflow",
+  "outlet": "Accenture Labs"
+ },
+ {
+  "date": "2023-09-01",
+  "type": "Talk",
+  "title": "Designing for Inclusivity",
+  "outlet": "Monash University, Software Systems & Cybersecurity Seminar"
+ },
+ {
+  "date": "2023-05-01",
+  "type": "Award",
+  "title": "ACM SIGSOFT Distinguished Paper Award — ICSE 2023",
+  "outlet": "ICSE 2023",
+  "summary": "“Do I Belong? Modeling Sense of Virtual Community Among Linux Kernel Contributors.”"
+ },
+ {
+  "date": "2022-10-01",
+  "type": "Talk",
+  "title": "Inclusivity in Google",
+  "outlet": "Google Research Conference"
+ },
+ {
+  "date": "2022-09-01",
+  "type": "Talk",
+  "title": "Engineering Inclusivity into Your Products",
+  "outlet": "Google, Technical Leads in Engineering Products"
+ },
+ {
+  "date": "2022-09-01",
+  "type": "Talk",
+  "title": "Engineering Inclusivity into Your Products",
+  "outlet": "Simon Fraser University Colloquium"
+ },
+ {
+  "date": "2022-05-01",
+  "type": "Keynote",
+  "title": "Engineering Inclusivity into Your Products",
+  "outlet": "Gender Equity Workshop at ICSE 2022"
+ },
+ {
+  "date": "2021-11-19",
+  "type": "Podcast",
+  "title": "Creating Appreciative Communities and Implicit Mentoring",
+  "outlet": "CHAOSScast, Episode 48",
+  "url": "https://podcast.chaoss.community/48",
+  "summary": "With Iftekhar Ahmed, on the invisible mentoring work that keeps open source communities healthy."
+ },
+ {
+  "date": "2021-09-01",
+  "type": "Talk",
+  "title": "Mentoring at Scale: Acknowledging Implicit Mentoring",
+  "outlet": "Linux Plumbers Conference"
+ },
+ {
+  "date": "2021-05-01",
+  "type": "Award",
+  "title": "OSU “Breaking Barriers in Research” Award",
+  "outlet": "Oregon State University",
+  "summary": "Co-recipient for the GenderMag project."
+ },
+ {
+  "date": "2020-10-01",
+  "type": "Talk",
+  "title": "Designing for Gender-Inclusive Software",
+  "outlet": "Silicon Valley Engineering Leadership Community (with Margaret Burnett)"
+ },
+ {
+  "date": "2020-10-01",
+  "type": "Award",
+  "title": "Honorable Mention — CSCW 2020",
+  "outlet": "CSCW 2020",
+  "summary": "“Hidden Figures: Roles and Pathways of Successful OSS Contributors.”"
+ },
+ {
+  "date": "2020-09-01",
+  "type": "Talk",
+  "title": "The State of D&I at the ASF",
+  "outlet": "ApacheCon 2020"
+ },
+ {
+  "date": "2020-08-01",
+  "type": "Talk",
+  "title": "Hidden Figures: Different Roles and Success Pathways in Open Source",
+  "outlet": "Software Developer Diversity and Inclusion Workshop"
+ },
+ {
+  "date": "2020-08-01",
+  "type": "Award",
+  "title": "Best Paper Award — OpenSym 2020",
+  "outlet": "OpenSym 2020",
+  "summary": "“Recommending Tasks to Newcomers in OSS Projects: How Do Mentors Handle It?”"
+ },
+ {
+  "date": "2020-05-01",
+  "type": "Award",
+  "title": "ACM SIGSOFT Distinguished Paper Award — ICSE 2020",
+  "outlet": "ICSE 2020",
+  "summary": "“A Tale from the Trenches: Cognitive Biases and Software Development.”"
+ },
+ {
+  "date": "2020-04-01",
+  "type": "Award",
+  "title": "Best Paper Honorable Mention — CHI 2020",
+  "outlet": "CHI 2020",
+  "summary": "“What’s Wrong with Computational Notebooks? Pain Points, Needs, and Design Opportunities.”"
+ },
+ {
+  "date": "2020-01-01",
+  "type": "Talk",
+  "title": "Engineering Inclusivity into Software Products",
+  "outlet": "PDX Lunch and Learn"
+ },
+ {
+  "date": "2019-12-01",
+  "type": "Talk",
+  "title": "Gender-Inclusivity in Software Engineering",
+  "outlet": "Reed College Colloquium"
+ },
+ {
+  "date": "2019-10-25",
+  "type": "Press",
+  "title": "New grant: Gender-inclusive open source through gender-inclusive tools",
+  "outlet": "OSU College of Engineering News",
+  "url": "https://engineering.oregonstate.edu/all-stories/new-grant-gender-inclusive-open-source-through-gender-inclusive-tools",
+  "summary": "$1.4M NSF award to make OSS tools work for everyone."
+ },
+ {
+  "date": "2019-10-01",
+  "type": "Talk",
+  "title": "Gender-Inclusive Software Design",
+  "outlet": "University of Oregon Colloquium"
+ },
+ {
+  "date": "2019-07-01",
+  "type": "Talk",
+  "title": "Is the Software Itself Gender-Biased? OSS Tools and Gender Inclusivity",
+  "outlet": "O’Reilly OSCON"
+ },
+ {
+  "date": "2019-06-25",
+  "type": "Press",
+  "title": "Oregon State leads fight against gender bias in software",
+  "outlet": "Oregon State University News",
+  "url": "https://news.oregonstate.edu/news/oregon-state-leads-fight-against-gender-bias-software",
+  "summary": "On GenderMag, the method I co-lead with Margaret Burnett for finding and fixing gender-inclusivity bugs."
+ },
+ {
+  "date": "2019-06-01",
+  "type": "Keynote",
+  "title": "Gender-Inclusive Software Engineering",
+  "outlet": "Software Developer Diversity and Inclusion Workshop (with Margaret Burnett)"
+ },
+ {
+  "date": "2019-06-01",
+  "type": "Talk",
+  "title": "Gender Inclusivity in Software Tools and Technology",
+  "outlet": "Google Tech Talk"
+ },
+ {
+  "date": "2019-04-01",
+  "type": "Talk",
+  "title": "Gender-Inclusive Software Engineering",
+  "outlet": "ACM SIGSOFT Webinar (with Margaret Burnett)"
+ },
+ {
+  "date": "2019-03-01",
+  "type": "Talk",
+  "title": "Gender Inclusivity in Open-Source Software",
+  "outlet": "MICWIC 2019 & CRA-W Distinguished Lecture Series"
+ },
+ {
+  "date": "2018-10-01",
+  "type": "Talk",
+  "title": "Gender-Inclusive Software: Facts and Fixes",
+  "outlet": "Wikimedia Tech Conference (with Margaret Burnett)"
+ },
+ {
+  "date": "2018-08-02",
+  "type": "Podcast",
+  "title": "Squashing Inclusivity Bugs in Open Source: Dr. Anita Sarma Shares Her Research",
+  "outlet": "The New Stack Makers",
+  "url": "https://player.fm/series/the-new-stack-makers/squashing-inclusivity-bugs-in-open-source-dr-anita-sarma-shares-her-research"
+ },
+ {
+  "date": "2018-08-01",
+  "type": "Press",
+  "title": "Squashing inclusivity bugs in open source software",
+  "outlet": "Opensource.com",
+  "url": "https://opensource.com/article/18/8/inclusivity-bugs-open-source-software",
+  "summary": "How GenderMag helps OSS projects find tool barriers that push newcomers away."
+ },
+ {
+  "date": "2018-08-01",
+  "type": "Talk",
+  "title": "Gender Biases Embedded in Open-Source Software",
+  "outlet": "Linux Foundation Open Source Summit North America"
+ },
+ {
+  "date": "2018-07-01",
+  "type": "Talk",
+  "title": "Gender Biases Embedded in Open-Source Software",
+  "outlet": "Mozilla"
+ },
+ {
+  "date": "2018-02-01",
+  "type": "Talk",
+  "title": "Is the Software Itself Gender-Biased? OSS Tools and More",
+  "outlet": "IBM T.J. Watson Research Center (with Margaret Burnett)"
+ },
+ {
+  "date": "2017-09-01",
+  "type": "Award",
+  "title": "IEEE TCSE Distinguished Paper Award — ICSME 2017",
+  "outlet": "ICSME 2017",
+  "summary": "“Software Practitioner Perspectives on Merge Conflicts and Resolutions.”"
+ },
+ {
+  "date": "2017-01-01",
+  "type": "Talk",
+  "title": "Open-Source Barriers to Entry: Are Tools Complicit in Gender Bias?",
+  "outlet": "IBM Almaden"
+ },
+ {
+  "date": "2016-10-01",
+  "type": "Talk",
+  "title": "Coordinating Socio-Technical Dependencies in Distributed Development",
+  "outlet": "IIIT Delhi"
+ },
+ {
+  "date": "2016-05-01",
+  "type": "Award",
+  "title": "Best Paper Award — CHI 2016",
+  "outlet": "CHI 2016",
+  "summary": "“Foraging among an Overabundance of Similar Variants.”"
+ },
+ {
+  "date": "2015-07-01",
+  "type": "Keynote",
+  "title": "Keynote",
+  "outlet": "SATToSE 2015 — Seminar Series on Advanced Techniques & Tools for Software Evolution"
+ },
+ {
+  "date": "2015-02-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Colorado, Boulder"
+ },
+ {
+  "date": "2014-06-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "Dagstuhl on Software Analytics, Dagstuhl, Germany"
+ },
+ {
+  "date": "2014-05-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "Institute for Software Research at University of California, Irvine CA, USA"
+ },
+ {
+  "date": "2014-03-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "North Carolina State University, Raleigh, NC, USA"
+ },
+ {
+  "date": "2014-03-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Illinois, Chicago, IL, USA"
+ },
+ {
+  "date": "2014-01-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Southern California, Los Angeles, CA, USA"
+ },
+ {
+  "date": "2010-11-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of New Mexico, Albuquerque, NM, USA"
+ },
+ {
+  "date": "2010-07-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "Microsoft Research Faculty Summit, Redmond, WA, USA"
+ },
+ {
+  "date": "2010-03-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "Mining Software Archives, Ascona, Switzerland"
+ },
+ {
+  "date": "2009-10-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "IBM TJ Watson Labs, Hawthorne, NY, USA"
+ },
+ {
+  "date": "2009-07-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Toronto, Toronto, Ontario, Canada"
+ },
+ {
+  "date": "2009-05-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Victoria, Victoria, BC, Canada"
+ },
+ {
+  "date": "2009-02-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "North Carolina State University, Raleigh, NC, USA"
+ },
+ {
+  "date": "2007-04-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Wisconsin, Milwaukee, WI, USA"
+ },
+ {
+  "date": "2007-02-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "Microsoft Research, Redmond, WA, USA"
+ },
+ {
+  "date": "2006-07-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Maryland, Baltimore County, MD, USA"
+ },
+ {
+  "date": "2006-01-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "University of Colorado at Boulder, Boulder, CO, USA"
+ },
+ {
+  "date": "2004-08-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "IBM Research Labs, Collaborative User Experience Group, Cambridge, MA, USA"
+ },
+ {
+  "date": "2004-03-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "Federal University of Rio de Janeiro, Rio de Janeiro, Brazil"
+ },
+ {
+  "date": "2004-01-01",
+  "type": "Talk",
+  "title": "Invited talk",
+  "outlet": "Association for Configuration and Data Management, Anaheim, CA, USA"
+ }
+]

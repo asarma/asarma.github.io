@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Research · Anita Sarma</title>
+<meta name="description" content="Research areas, funding, and honors: human–AI collaboration, AI and learning, inclusive design, open source sustainability, and developer cognition.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+<div class="grain" aria-hidden="true"></div>
+<header id="site-nav"></header>
+
+<main class="wrap">
+  <div class="page-hero reveal">
+    <span class="eyebrow">Research</span>
+    <h1>Software is a <em>human</em> endeavor</h1>
+    <p>Building software means gathering many kinds of information and making decisions inside a web of dependencies between code and the people who write it. My research draws on theories of human behavior (cognitive biases, information foraging, education theory, transactive memory) and on empirical studies to design AI-infused, inclusive tools that help professional developers, students, and end-user programmers work better and make fewer errors. The work spans AI, data mining, cognitive science, program analysis, visualization, and HCI.</p>
+  </div>
+
+  <section id="themes"></section>
+
+  <section>
+    <div class="grid g2">
+      <div class="card glass reveal">
+        <span class="eyebrow">Funding</span>
+        <h2 class="serif" style="font-size:36px;margin:8px 0 18px">Selected grants</h2>
+        <ul class="list-clean">
+          <li><span class="y">2026</span><span>Google: Multi-Level Impact Assessment of Google Summer of Code (PI) · <span class="amt">$100K</span></span></li>
+          <li><span class="y">2024</span><span>Google: Glue Work, What It Is and Where It Occurs in Open Source (PI) · <span class="amt">$100K</span></span></li>
+          <li><span class="y">2023</span><span>NSF: Learning Software Engineering by Contributing to Real Projects with Chatbot Assistance (PI) · <span class="amt">$288K</span></span></li>
+          <li><span class="y">2022</span><span>NSF IUSE: Scaffolding Computational Thinking in Introductory CS through a Conversational Agent (PI) · <span class="amt">$195K</span></span></li>
+          <li><span class="y">2022</span><span>MOSIP Inclusivity Fellowship (graduate student support) · <span class="amt">$152K</span></span></li>
+          <li><span class="y">2021</span><span>Google Award for Inclusion Research: Improving a Sense of Belonging in Open Source (PI) · <span class="amt">$60K</span></span></li>
+          <li><span class="y">2020</span><span>NSF SHF: Adaptive Development Environments, Modeling Cognitive Styles of Developers (PI) · <span class="amt">$250K</span></span></li>
+          <li><span class="y">2019</span><span>NSF CHS Large: Gender-Inclusive Open Source through Gender-Inclusive Tools (PI) · <span class="amt">$1.4M</span></span></li>
+          <li><span class="y">2018</span><span>NSF CHS/SHF: Scaffolding Skill Acquisition to Onboard OSS Ecosystems (PI) · <span class="amt">$250K</span></span></li>
+          <li><span class="y">2013</span><span>NSF CAREER: Conflict Minimization in Distributed Software Development (PI) · <span class="amt">$500K</span></span></li>
+          <li><span class="y">2013</span><span>NSF HCC Large: Variations to Support Exploratory Programming (PI) · <span class="amt">$857K</span></span></li>
+        </ul>
+      </div>
+      <div class="card glass reveal">
+        <span class="eyebrow">Recognition</span>
+        <h2 class="serif" style="font-size:36px;margin:8px 0 18px">Honors &amp; awards</h2>
+        <ul class="list-clean">
+          <li><span class="y">2026</span><span>IEEE Distinguished Paper Award, ICSME (Industry Track)</span></li>
+          <li><span class="y">2025</span><span>Best Paper Award, ACM/IEEE ESEM</span></li>
+          <li><span class="y">2025</span><span>OSU College of Engineering Mentoring Award</span></li>
+          <li><span class="y">2024</span><span>Distinguished Reviewer, ACM/IEEE ICSE</span></li>
+          <li><span class="y">2023</span><span>ACM SIGSOFT Distinguished Paper Award, ICSE</span></li>
+          <li><span class="y">2021</span><span>OSU “Breaking Barriers in Research” Award (GenderMag, co-recipient)</span></li>
+          <li><span class="y">2020</span><span>ACM SIGSOFT Distinguished Paper, ICSE · Best Paper, OpenSym · Honorable Mentions, CHI &amp; CSCW</span></li>
+          <li><span class="y">2017</span><span>IEEE TCSE Distinguished Paper, ICSME · Honorable Mention, CHI</span></li>
+          <li><span class="y">2016</span><span>Best Paper Award, CHI · Best Paper Award, ICGSE</span></li>
+          <li><span class="y">2015</span><span>Distinguished Reviewer, ICSE</span></li>
+          <li><span class="y">2013</span><span>NSF CAREER Award</span></li>
+          <li><span class="y">2012</span><span>Student Choice Outstanding Teaching Award, University of Nebraska–Lincoln</span></li>
+          <li><span class="y">2011</span><span>Distinguished Paper Award, ESEM</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/themes.js"></script>
+<script>
+(async function () {
+  const { esc, getJSON, setupReveal } = window.Site;
+  let pubs = [];
+  try { pubs = await getJSON('data/publications.json'); } catch (e) {}
+  const byId = Object.fromEntries(pubs.map(p => [p.id, p]));
+  document.getElementById('themes').innerHTML = window.THEMES.map(t => {
+    const count = pubs.filter(p => (p.tags || []).includes(t.tag)).length;
+    const reps = t.reps.map(id => byId[id]).filter(Boolean).map(p => {
+      const href = p.doi || (p.arxiv ? 'https://arxiv.org/abs/' + p.arxiv : 'publications.html?q=' + encodeURIComponent(p.title));
+      return `<a href="${esc(href)}" target="_blank" rel="noopener"><span>${esc(p.venueShort)} ${p.year}</span>${esc(p.title)}</a>`;
+    }).join('');
+    return `<article class="theme-block glass reveal" id="${t.id}" style="--c:${t.color}">
+      <div class="side">
+        <span class="ic">${t.icon}</span>
+        <h2>${esc(t.title)}</h2>
+        <a class="link-arrow" href="publications.html?field=${encodeURIComponent(t.tag)}">${count ? count + ' papers' : 'Papers'} in this area</a>
+      </div>
+      <div class="main">
+        <p>${esc(t.body)}</p>
+        <ul class="qs">${t.questions.map(q => `<li>${esc(q)}</li>`).join('')}</ul>
+        <div class="reps">${reps}</div>
+      </div>
+    </article>`;
+  }).join('');
+  setupReveal();
+  if (location.hash) document.querySelector(location.hash)?.scrollIntoView();
+})();
+</script>
+</body>
+</html>

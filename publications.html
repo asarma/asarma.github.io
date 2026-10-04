@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Publications · Anita Sarma</title>
+<meta name="description" content="Searchable, filterable list of Anita Sarma's publications by research field, venue, year, and award.">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300..700&family=Geist+Mono:wght@500;600&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t)}catch(e){}</script>
+</head>
+<body>
+<div class="aurora" aria-hidden="true"><span class="b1"></span><span class="b2"></span><span class="b3"></span><span class="b4"></span></div>
+<div class="grain" aria-hidden="true"></div>
+<header id="site-nav"></header>
+
+<main class="wrap">
+  <div class="page-hero reveal">
+    <span class="eyebrow">Publications</span>
+    <h1>Research articles, <em>by field</em></h1>
+    <p>Search titles, authors, venues, and abstracts, then narrow by research field, publication type, year, or award. Each paper links to its DOI or preprint and has a one-click BibTeX citation.</p>
+  </div>
+
+  <div class="search reveal" style="margin-bottom:22px">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="q" type="search" placeholder="Search e.g. “trust”, “merge conflicts”, “Burnett”, “ICSE”…" autocomplete="off" aria-label="Search publications">
+    <kbd>/</kbd>
+  </div>
+
+  <div class="pub-shell">
+    <aside class="filters glass reveal" id="filters" aria-label="Filters">
+      <button class="btn btn-ghost filter-toggle" id="filter-toggle" type="button" aria-expanded="true">Filters</button>
+      <div class="filter-body">
+        <div>
+          <h4>Research field <button type="button" data-clear="fields">Clear</button></h4>
+          <div class="chips stack" id="f-fields"></div>
+        </div>
+        <div>
+          <h4>Type <button type="button" data-clear="types">Clear</button></h4>
+          <div class="chips" id="f-types"></div>
+        </div>
+        <div>
+          <h4>Year</h4>
+          <div class="hist" id="hist" aria-label="Papers per year"></div>
+          <div class="hist-axis"><span id="hmin"></span><span id="hmax"></span></div>
+          <div class="range" style="margin-top:12px">
+            <select id="from" aria-label="From year"></select><span>to</span><select id="to" aria-label="To year"></select>
+          </div>
+        </div>
+        <div>
+          <h4>Venue</h4>
+          <select class="select" id="venue" aria-label="Venue"><option value="">All venues</option></select>
+        </div>
+        <div style="display:grid;gap:12px">
+          <label class="switch">Award-winning only <input type="checkbox" id="award"></label>
+          <label class="switch">Hide tech reports &amp; preprints <input type="checkbox" id="archival"></label>
+        </div>
+      </div>
+    </aside>
+
+    <div>
+      <div class="results-bar">
+        <div class="count" id="count" aria-live="polite"></div>
+        <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+          <select class="select" id="sort" aria-label="Sort" style="width:auto">
+            <option value="new">Newest first</option>
+            <option value="old">Oldest first</option>
+            <option value="cites">Most cited</option>
+          </select>
+          <button class="btn btn-ghost" id="export" type="button" style="padding:9px 15px;font-size:14px">Export .bib</button>
+        </div>
+      </div>
+      <div class="active-filters" id="active" style="margin:0 4px 16px"></div>
+      <div id="results"></div>
+    </div>
+  </div>
+</main>
+
+<footer id="site-footer"></footer>
+<script src="assets/js/site.js"></script>
+<script src="assets/js/publications.js"></script>
+</body>
+</html>
