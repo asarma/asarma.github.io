@@ -21,7 +21,8 @@
   try {
     const m = await getJSON('data/metrics.json');
     const fmt = n => Number(n).toLocaleString('en-US');
-    document.getElementById('stat-cites').textContent = fmt(m.citations);
+    // Rounded down so the number reads as a stable milestone (e.g. 6,563 → 6,500+)
+    document.getElementById('stat-cites').textContent = fmt(Math.floor(m.citations / 500) * 500) + '+';
     document.getElementById('stat-h').textContent = m.hIndex;
     document.getElementById('stat-i10').textContent = m.i10;
     if (m.updated) document.getElementById('stats-src').innerHTML =
@@ -81,11 +82,13 @@
     const SHORT = { 'The New York Times': 'NYT', 'Jefferson Public Radio': 'JPR', 'KGW TV News': 'KGW', 'KATU News': 'KATU', 'KOIN 6 News': 'KOIN 6' };
     const items = [];
 
-    const awards = pubs.filter(p => p.award && /best|distinguished/i.test(p.award) && !/nomin|honou?rable/i.test(p.award))
+    // Best / distinguished papers and honorable mentions (not nominations)
+    const awards = pubs.filter(p => p.award && /best|distinguished|honou?rable/i.test(p.award) && !/nomin/i.test(p.award))
       .sort((a, b) => b.year - a.year);
+    const roundDown = n => n >= 10 ? `${Math.floor(n / 10) * 10}+` : `${n}`;
     if (awards.length) items.push({ c: '#6d28d9', href: 'publications.html?award=1', icon: ICONS.trophy,
-      t: `${awards.length} paper awards`,
-      s: [...new Set(awards.map(p => p.venueShort || shortName(p.venue)))].slice(0, 3).join(' · ') });
+      t: `${roundDown(awards.length)} paper awards`,
+      s: [...new Set(awards.filter(p => !/honou?rable/i.test(p.award)).map(p => p.venueShort || shortName(p.venue)))].slice(0, 3).join(' · ') });
 
     const press = news.filter(n => ['Press', 'TV', 'Radio'].includes(n.type) && n.outlet);
     if (press.length) {
