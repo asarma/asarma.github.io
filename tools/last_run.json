@@ -1,9 +1,9 @@
 {
  "date": "2026-10-03",
  "metrics_before": {
-  "citations": null,
-  "hIndex": null,
-  "i10": null
+  "citations": 6563,
+  "hIndex": 42,
+  "i10": 122
  },
  "metrics_after": {
   "citations": 6563,
@@ -12,5 +12,5 @@
  },
  "new_papers": [],
  "upgraded": [],
- "cites_updated": 10
+ "cites_updated": 4
 }
